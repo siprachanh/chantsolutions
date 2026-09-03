@@ -1,0 +1,1854 @@
+<title>Sippy Chanthaphaychith</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%232F3D33%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2215%22%20width%3D%2218%22%20height%3D%222%22%20rx%3D%221%22%20fill%3D%22%23E4C3B8%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CF6249%22%2F%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CF6249%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap">
+<style>
+/* ---------- tokens: light (bare :root = complete palette) ---------- */
+:root{
+  --cream:#F4ECDD;
+  --forest:#2F3D33;
+  --coral:#CF6249;
+  --sage:#8FA08A;
+  --ochre:#C9922F;
+  --blush:#E4C3B8;
+
+  --bg:#F4ECDD;
+  --bg-2:#EFE5D3;
+  --surface:#FBF6EC;
+  --surface-2:#F2E9D9;
+  --ink:#2F3D33;
+  --ink-2:#4E5C51;
+  --ink-3:#77836F;
+  --rule:#DCD0BB;
+  --rule-strong:#C4B69E;
+  --accent:#B8503A;
+  --accent-ink:#FBF6EC;
+  --sage-ink:#5E7059;
+  --ochre-ink:#8A6216;
+  --focus:#B8503A;
+  --shadow:0 1px 2px rgba(47,61,51,.06), 0 8px 24px -12px rgba(47,61,51,.18);
+  --radius:3px;
+  --maxw:1080px;
+  --prose:66ch;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1E2721;
+    --bg-2:#243029;
+    --surface:#27332B;
+    --surface-2:#2E3B32;
+    --ink:#EDE4D4;
+    --ink-2:#C3CBBE;
+    --ink-3:#93A08E;
+    --rule:#3A483E;
+    --rule-strong:#4C5C50;
+    --accent:#E8836B;
+    --accent-ink:#1E2721;
+    --sage-ink:#A9BCA3;
+    --ochre-ink:#DDAE55;
+    --focus:#E8836B;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1E2721;
+  --bg-2:#243029;
+  --surface:#27332B;
+  --surface-2:#2E3B32;
+  --ink:#EDE4D4;
+  --ink-2:#C3CBBE;
+  --ink-3:#93A08E;
+  --rule:#3A483E;
+  --rule-strong:#4C5C50;
+  --accent:#E8836B;
+  --accent-ink:#1E2721;
+  --sage-ink:#A9BCA3;
+  --ochre-ink:#DDAE55;
+  --focus:#E8836B;
+  --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Mulish",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 18px}}
+
+/* ---------- type ---------- */
+h1,h2,h3{font-family:"Cormorant Garamond","Iowan Old Style",Georgia,serif;font-weight:600;text-wrap:balance;margin:0;line-height:1.12}
+h1{font-size:clamp(2.1rem,7.2vw,5.1rem);letter-spacing:-.015em;overflow-wrap:break-word;hyphens:auto}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:-.01em}
+h3{font-size:1.22rem;font-weight:700;letter-spacing:-.005em;line-height:1.25}
+p{margin:0}
+a{color:inherit}
+.eyebrow{
+  font-family:"Mulish",sans-serif;font-size:.688rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);
+}
+.lede{font-size:clamp(1.05rem,1.9vw,1.22rem);line-height:1.62;color:var(--ink-2);max-width:min(100%,var(--prose))}
+.prose p{max-width:min(100%,var(--prose));color:var(--ink-2)}
+.prose p + p{margin-top:1em}
+
+/* ---------- bridge-span divider (the one motif) ---------- */
+.span-rule{display:flex;align-items:center;gap:0;height:1px;margin:0;border:0;background:none}
+.span-rule::before,.span-rule::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--rule-strong);flex:none}
+.span-rule i{flex:1;height:1px;background:linear-gradient(90deg,var(--rule-strong),var(--rule) 22%,var(--rule) 78%,var(--rule-strong))}
+
+/* ---------- nav ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.topbar-in{display:flex;align-items:center;gap:20px;height:58px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media (max-width:640px){.topbar-in{padding:0 18px;gap:12px}}
+.brandmark{
+  font-family:"Cormorant Garamond",Georgia,serif;font-size:1.32rem;font-weight:700;
+  letter-spacing:.01em;text-decoration:none;color:var(--ink);white-space:nowrap;
+}
+.brandmark span{color:var(--accent)}
+.navlinks{display:flex;gap:4px;margin-left:auto;align-items:center}
+.navlinks a{
+  font-size:.8rem;font-weight:700;letter-spacing:.04em;text-decoration:none;
+  color:var(--ink-2);padding:7px 11px;border-radius:var(--radius);white-space:nowrap;
+  transition:background .15s ease,color .15s ease;
+}
+.navlinks a:hover{background:var(--surface-2);color:var(--ink)}
+.navlinks a[aria-current="page"]{color:var(--accent)}
+@media (max-width:600px){
+  .navlinks a{padding:7px 7px;font-size:.75rem}
+  .navlinks{gap:0}
+  /* the Guestbook link is only a scroll shortcut, and the hero already
+     offers one — drop it before the bar overflows a narrow phone */
+  .navlinks a[data-jump]{display:none}
+  .topbar-in{gap:8px}
+}
+.themebtn{
+  margin-left:6px;background:transparent;border:1px solid var(--rule);color:var(--ink-2);
+  width:32px;height:32px;border-radius:var(--radius);cursor:pointer;font-size:.9rem;line-height:1;
+  display:grid;place-items:center;flex:none;
+}
+.themebtn:hover{border-color:var(--rule-strong);color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,8vw,92px) 0 clamp(40px,6vw,64px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:760px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:30px}}
+.portrait{
+  width:232px;height:232px;border-radius:50%;object-fit:cover;object-position:50% 50%;
+  border:1px solid var(--rule-strong);
+  box-shadow:var(--shadow);
+  background:var(--surface-2);
+  justify-self:end;
+}
+@media (max-width:760px){.portrait{width:150px;height:150px;justify-self:start;order:-1}}
+.hero-eyebrow{margin-bottom:14px;color:var(--accent)}
+.hero h1{margin-bottom:.24em}
+.roleline{
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;
+  font-size:.95rem;font-weight:700;color:var(--ink-2);margin-bottom:20px;
+}
+.roleline b{font-weight:700;white-space:nowrap}
+/* the separator rides on the word before it, so it can never strand
+   at the end of a wrapped line */
+.roleline b:not(:last-child)::after{content:"/";color:var(--rule-strong);margin-left:14px;font-weight:400}
+/* On narrow phones the three roles wrap whatever face loads, so drop the
+   separators rather than leave a slash hanging at the end of a line. */
+@media (max-width:440px){
+  .roleline{font-size:.86rem;gap:2px 16px}
+  .roleline b:not(:last-child)::after{content:none}
+}
+.hero .lede{margin-bottom:26px}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:"Mulish",sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.02em;
+  padding:11px 18px;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;
+  text-decoration:none;transition:background .15s ease,border-color .15s ease,color .15s ease,transform .12s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn-primary:hover{background:color-mix(in srgb, var(--accent) 86%, var(--ink))}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+.btn-ghost:hover{background:var(--surface-2);border-color:var(--ink-3)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+/* ---------- sections ---------- */
+section{padding:clamp(44px,6vw,72px) 0}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
+.sec-head .span-rule{margin-top:12px}
+
+/* facts strip */
+.facts{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:var(--radius);overflow:hidden;
+}
+.fact{background:var(--surface);padding:18px 20px}
+.fact dt{font-size:.688rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.fact dd{margin:0;font-size:.95rem;font-weight:600;color:var(--ink);line-height:1.4}
+.fact dd b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.65rem;font-weight:700;display:block;line-height:1;margin-bottom:2px;font-variant-numeric:tabular-nums}
+
+/* about layout */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,56px);align-items:start}
+@media (max-width:820px){.about-grid{grid-template-columns:minmax(0,1fr);gap:34px}}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--rule)}
+.tl li{position:relative;padding:0 0 22px 26px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{
+  content:"";position:absolute;left:0;top:7px;width:11px;height:11px;border-radius:50%;
+  background:var(--bg);border:1px solid var(--rule-strong);
+}
+.tl li.now::before{background:var(--accent);border-color:var(--accent)}
+.tl .role{font-weight:700;font-size:.95rem;color:var(--ink);display:block}
+.tl .org{font-size:.875rem;color:var(--ink-2)}
+.tl .when{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:2px}
+
+/* framework */
+.fw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+@media (max-width:720px){.fw{grid-template-columns:minmax(0,1fr)}}
+.fw-step{
+  background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+  padding:20px;display:flex;flex-direction:column;gap:8px;position:relative;
+}
+.fw-step .n{
+  font-family:"Cormorant Garamond",Georgia,serif;font-size:.95rem;font-weight:700;
+  color:var(--accent);letter-spacing:.06em;
+}
+.fw-step p{font-size:.9rem;color:var(--ink-2);line-height:1.55}
+
+/* work board */
+.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+@media (max-width:900px){.board{grid-template-columns:minmax(0,1fr)}}
+.col-head{display:flex;align-items:center;gap:9px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.dot.shipped{background:var(--sage-ink)}
+.dot.building{background:var(--ochre-ink)}
+.dot.next{background:transparent;border:1.5px solid var(--ink-3)}
+.col-head h3{font-family:"Mulish",sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.col-head .count{margin-left:auto;font-size:.72rem;font-weight:800;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.cards{display:flex;flex-direction:column;gap:12px}
+.card{
+  background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+  padding:16px 17px;display:flex;flex-direction:column;gap:8px;
+  transition:border-color .15s ease,transform .15s ease;
+}
+.card:hover{border-color:var(--rule-strong)}
+.card h4{margin:0;overflow-wrap:break-word;font-size:.98rem;font-weight:700;line-height:1.3;color:var(--ink)}
+.card p{font-size:.875rem;color:var(--ink-2);line-height:1.55}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.tag{
+  font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  padding:3px 7px;border-radius:2px;border:1px solid var(--rule-strong);color:var(--ink-3);
+}
+.card.is-next{background:transparent;border-style:dashed}
+.why{font-size:.8rem;color:var(--ink-3);font-style:italic;line-height:1.5}
+
+/* library */
+.lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:18px}
+.lib-item{
+  background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+  padding:0;overflow:hidden;display:flex;flex-direction:column;
+}
+.lib-cover{
+  height:118px;display:flex;align-items:flex-end;padding:16px;
+  border-bottom:1px solid var(--rule);
+}
+.lib-cover .kind{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.cover-a{background:linear-gradient(140deg,var(--forest),#415646)}
+.cover-a .kind{color:var(--blush)}
+.cover-b{background:linear-gradient(140deg,var(--accent),#8E3B2A)}
+.cover-b .kind{color:#F7E4DC}
+.cover-c{background:linear-gradient(140deg,var(--sage),#6C7F68)}
+.cover-c .kind{color:#12180F}
+.cover-d{background:linear-gradient(140deg,var(--ochre),#8A6216)}
+.cover-d .kind{color:#20180A}
+.lib-body{padding:16px 17px;display:flex;flex-direction:column;gap:8px;flex:1}
+.lib-body h4{margin:0;overflow-wrap:break-word;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.32rem;font-weight:700;line-height:1.18}
+.lib-body p{font-size:.875rem;color:var(--ink-2);line-height:1.55}
+.lib-meta{margin-top:auto;padding-top:10px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);display:flex;gap:8px;align-items:center}
+.status-pill{
+  font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  padding:3px 8px;border-radius:2px;
+}
+.pill-live{background:color-mix(in srgb, var(--sage-ink) 18%, transparent);color:var(--sage-ink);border:1px solid color-mix(in srgb, var(--sage-ink) 40%, transparent)}
+.pill-wip{background:color-mix(in srgb, var(--ochre-ink) 16%, transparent);color:var(--ochre-ink);border:1px solid color-mix(in srgb, var(--ochre-ink) 40%, transparent)}
+.pill-draft{background:transparent;color:var(--ink-3);border:1px dashed var(--rule-strong)}
+
+/* ---------- guestbook ---------- */
+.gb{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.gb-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(28px,5vw,52px);align-items:start}
+@media (max-width:860px){.gb-grid{grid-template-columns:minmax(0,1fr);gap:30px}}
+.gb-form{
+  background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+  padding:20px;position:sticky;top:78px;display:flex;flex-direction:column;gap:12px;
+}
+@media (max-width:860px){.gb-form{position:static}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.688rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.field input,.field textarea{
+  font-family:"Mulish",sans-serif;font-size:.92rem;color:var(--ink);
+  background:var(--bg);border:1px solid var(--rule-strong);border-radius:var(--radius);
+  padding:10px 12px;width:100%;resize:vertical;line-height:1.5;
+}
+.field textarea{min-height:104px}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-3);opacity:.75}
+.counter{font-size:.72rem;color:var(--ink-3);font-variant-numeric:tabular-nums;text-align:right}
+.counter.over{color:var(--accent);font-weight:700}
+.formnote{font-size:.78rem;color:var(--ink-3);line-height:1.5}
+.msg{font-size:.83rem;font-weight:600;line-height:1.45;padding:9px 11px;border-radius:var(--radius)}
+.msg.err{background:color-mix(in srgb, var(--accent) 12%, transparent);color:var(--accent);border:1px solid color-mix(in srgb, var(--accent) 35%, transparent)}
+.msg.ok{background:color-mix(in srgb, var(--sage-ink) 14%, transparent);color:var(--sage-ink);border:1px solid color-mix(in srgb, var(--sage-ink) 35%, transparent)}
+
+.gb-list{display:flex;flex-direction:column;gap:14px;min-width:0}
+.gb-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:2px}
+.gb-toolbar .eyebrow{margin:0}
+.gb-toolbar .n{margin-left:auto;font-size:.75rem;font-weight:800;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.comment{
+  background:var(--surface);border:1px solid var(--rule);border-radius:var(--radius);
+  padding:16px 17px;display:flex;flex-direction:column;gap:10px;min-width:0;
+}
+.c-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.c-name{font-weight:800;font-size:.92rem;color:var(--ink);word-break:break-word}
+.c-when{font-size:.72rem;color:var(--ink-3);letter-spacing:.04em}
+.c-body{font-size:.93rem;color:var(--ink-2);line-height:1.62;white-space:pre-wrap;overflow-wrap:anywhere}
+.rx{display:flex;gap:7px;flex-wrap:wrap}
+.rx button{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:"Mulish",sans-serif;font-size:.8rem;font-weight:700;
+  background:var(--bg);border:1px solid var(--rule-strong);color:var(--ink-2);
+  padding:4px 10px;border-radius:999px;cursor:pointer;line-height:1.4;
+  transition:border-color .13s ease,background .13s ease,color .13s ease;
+  font-variant-numeric:tabular-nums;
+}
+.rx button:hover{border-color:var(--ink-3);background:var(--surface-2)}
+.rx button[aria-pressed="true"]{
+  border-color:var(--accent);color:var(--accent);
+  background:color-mix(in srgb, var(--accent) 11%, transparent);
+}
+.rx button .emo{font-size:.95rem;line-height:1;filter:saturate(1)}
+.rx button .n{min-width:.8ch;text-align:left}
+.empty{
+  border:1px dashed var(--rule-strong);border-radius:var(--radius);
+  padding:26px 20px;text-align:center;color:var(--ink-3);font-size:.9rem;
+}
+.skeleton{height:96px;border-radius:var(--radius);background:linear-gradient(90deg,var(--surface),var(--surface-2),var(--surface));background-size:200% 100%;animation:sh 1.3s linear infinite;border:1px solid var(--rule)}
+@keyframes sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.offline{
+  font-size:.8rem;color:var(--ink-3);border-left:2px solid var(--rule-strong);
+  padding-left:11px;line-height:1.55;
+}
+
+/* ---------- footer ---------- */
+footer{padding:44px 0 56px}
+.foot{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:baseline;justify-content:space-between}
+.foot p{font-size:.83rem;color:var(--ink-3)}
+.foot a{color:var(--ink-2);text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+.foot a:hover{color:var(--accent)}
+.disclaimer{font-size:.78rem;color:var(--ink-3);max-width:62ch;line-height:1.55;margin-top:18px}
+
+
+/* ---------- utilities (kept as classes: a strict CSP blocks style="") ---------- */
+.band{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.mb-14{margin-bottom:14px}
+.mb-28{margin-bottom:28px}
+.mb-30{margin-bottom:30px}
+.mt-4{margin-top:4px}
+.mt-26{margin-top:26px}
+.creds-label{margin:22px 0 10px}
+.btn-block{justify-content:center;width:100%}
+.skeleton-sm{height:76px}
+.foot-strong{color:var(--ink-2)}
+
+/* ---------- guestbook: auth, account, moderation ---------- */
+.gb-side{display:flex;flex-direction:column;gap:16px;position:sticky;top:78px}
+@media (max-width:860px){.gb-side{position:static}}
+
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--rule);margin:-4px -4px 4px}
+.tab{
+  flex:1;background:transparent;border:0;border-bottom:2px solid transparent;
+  font-family:"Mulish",sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);padding:9px 6px;cursor:pointer;
+  transition:color .15s ease,border-color .15s ease;
+}
+.tab:hover{color:var(--ink-2)}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+
+#signin,#signup,#rename,#repw,#delacct,#cform,#pform{display:flex;flex-direction:column;gap:12px}
+
+.hint{font-size:.75rem;color:var(--ink-3);line-height:1.5}
+
+.check{display:flex;gap:9px;align-items:flex-start;font-size:.8rem;color:var(--ink-2);line-height:1.5;cursor:pointer}
+.check input{margin:2px 0 0;flex:none;width:15px;height:15px;accent-color:var(--accent)}
+.check a{color:var(--accent);text-underline-offset:2px}
+
+.whoami{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.who-name{font-weight:800;font-size:.95rem;color:var(--ink);word-break:break-word}
+.who-badge{
+  font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 7px;border-radius:2px;color:var(--sage-ink);
+  border:1px solid color-mix(in srgb, var(--sage-ink) 40%, transparent);
+  background:color-mix(in srgb, var(--sage-ink) 14%, transparent);
+}
+
+.btn-sm{font-size:.78rem;padding:8px 12px}
+.btn-danger{background:transparent;color:var(--accent);border-color:color-mix(in srgb, var(--accent) 55%, transparent)}
+.btn-danger:hover{background:color-mix(in srgb, var(--accent) 12%, transparent);border-color:var(--accent)}
+
+.acct{border-top:1px solid var(--rule);padding-top:14px;display:flex;flex-direction:column;gap:12px}
+.linkbtn{
+  background:none;border:0;padding:0;cursor:pointer;text-align:left;
+  font-family:"Mulish",sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3);
+}
+.linkbtn:hover{color:var(--accent)}
+.linkbtn::after{content:" ▾";font-size:.7em}
+.linkbtn[aria-expanded="true"]::after{content:" ▴"}
+#acct-panel{display:flex;flex-direction:column;gap:16px}
+.acct-meta{font-size:.78rem;color:var(--ink-3);word-break:break-word}
+.acct-actions{display:flex;flex-direction:column;gap:8px}
+.acct-actions .btn{text-align:center}
+
+.danger{
+  border:1px solid color-mix(in srgb, var(--accent) 30%, var(--rule));
+  border-radius:var(--radius);padding:14px;display:flex;flex-direction:column;gap:10px;
+  background:color-mix(in srgb, var(--accent) 5%, transparent);
+}
+.danger-head{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.radios{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.radios legend{
+  font-size:.688rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);padding:0;margin-bottom:2px;
+}
+
+.c-top{position:relative}
+.c-del{
+  margin-left:auto;background:none;border:0;cursor:pointer;padding:2px 4px;
+  font-family:"Mulish",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.05em;
+  color:var(--ink-3);border-radius:2px;
+}
+.c-del:hover{color:var(--accent)}
+.c-del[data-confirm="1"]{color:var(--accent);font-weight:800}
+
+/* ---------- privacy notice ---------- */
+.policy{max-width:74ch;display:flex;flex-direction:column;gap:8px}
+.policy h3{
+  font-family:"Mulish",sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-top:30px;
+}
+.policy p{color:var(--ink-2);font-size:.95rem;line-height:1.65}
+.plist{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.plist li{color:var(--ink-2);font-size:.95rem;line-height:1.6}
+.plist strong{color:var(--ink)}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:var(--radius);margin-top:4px}
+.ptable{border-collapse:collapse;width:100%;min-width:520px;font-size:.875rem;table-layout:fixed}
+.ptable col.c-what{width:23%}
+.ptable col.c-why{width:51%}
+.ptable col.c-long{width:26%}
+.ptable th,.ptable td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+.ptable thead th{
+  font-family:"Mulish",sans-serif;font-size:.66rem;font-weight:800;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);background:var(--surface-2);
+}
+.ptable tbody tr:last-child th,.ptable tbody tr:last-child td{border-bottom:0}
+.ptable td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+.ptable td{color:var(--ink-2);line-height:1.55}
+.ptable td:last-child{color:var(--ink-3);white-space:nowrap}
+.policy-version{margin-top:26px;font-size:.75rem;color:var(--ink-3)}
+.cardlink{color:inherit;text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));
+  background-size:100% 1px;background-repeat:no-repeat;background-position:0 100%;padding-bottom:1px}
+.cardlink:hover{color:var(--accent)}
+.cardlink::after{content:" \2197";font-size:.8em;color:var(--accent)}
+.lib-buy{
+  margin-left:auto;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:none;
+  color:var(--accent);text-decoration:none;white-space:nowrap;
+}
+.lib-buy:hover{text-decoration:underline;text-underline-offset:3px}
+.lib-meta{flex-wrap:wrap}
+.prose .pull{
+  font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;font-weight:600;
+  color:var(--ink);line-height:1.25;margin-top:1.1em;padding-left:14px;
+  border-left:2px solid var(--accent);max-width:none;
+}
+
+[hidden]{display:none !important}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--accent-ink);padding:10px 16px;z-index:100;font-weight:700;font-size:.85rem}
+.skip:focus{left:8px;top:8px}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brandmark" href="#/" data-nav>Sippy<span>.</span></a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="#/" data-nav data-view="home">Home</a>
+      <a href="#/work" data-nav data-view="work">Library</a>
+      <a href="#guestbook" data-jump>Guestbook</a>
+      <a href="#/privacy" data-nav data-view="privacy">Privacy</a>
+      <button class="themebtn" id="themebtn" type="button" aria-label="Switch colour theme" title="Switch colour theme"><svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 2a6 6 0 0 0 0 12z" fill="currentColor"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HOME ================= -->
+<div id="view-home" data-view-panel>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow hero-eyebrow">ChantSolutions</p>
+          <h1>Siprachanh<br>Chanthaphaychith</h1>
+          <div class="roleline">
+            <b>Mediator</b><b>Agile coach</b><b>Bridge builder</b>
+          </div>
+          <p class="lede">English is my second language. I&rsquo;ve spent my whole life bridging the communication gap &mdash; translating for patients in hospital rooms, training law students to deliver an oral argument, coaching teams through agile transformations that actually stuck. Now that work is books, apps, and coaching.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#/work" data-nav>See the work</a>
+            <a class="btn btn-ghost" href="#guestbook" data-jump>Leave a note</a>
+          </div>
+        </div>
+        <img class="portrait" id="portrait" alt="Portrait of Siprachanh Chanthaphaychith" src="PORTRAIT_SRC" width="232" height="232">
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <dl class="facts">
+      <div class="fact"><dt>Project execution</dt><dd><b>15+</b>years</dd></div>
+      <div class="fact"><dt>Research &amp; analysis</dt><dd><b>13+</b>years</dd></div>
+      <div class="fact"><dt>Integration strategy</dt><dd><b>8+</b>years</dd></div>
+      <div class="fact"><dt>Based in</dt><dd>Murfreesboro,<br>Tennessee</dd></div>
+    </dl>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The short version</p>
+        <h2>How I got here</h2>
+        <div class="span-rule" role="presentation"><i></i></div>
+      </div>
+      <div class="about-grid">
+        <div class="prose">
+          <p>I learned this work before it had a title. When English is your second language, being the person who makes two sides understand each other isn&rsquo;t a career choice. It&rsquo;s the job in the room.</p>
+          <p>Translating for patients who couldn&rsquo;t ask their own doctor a question. Training law students to make an argument land in front of a judge. Coaching teams through agile transformations that actually stuck.</p>
+          <p>The setting kept changing. The problem never did &mdash; two people, both making perfect sense to themselves, neither one landing.</p>
+          <p>That has been the work for fifteen years. Most recently on the program that put generative AI aboard the International Space Station, the first large language model deployed in space, where the hard part was never the model. And for six years alongside it, volunteering as a mediator, sitting with people who had stopped speaking to each other altogether.</p>
+          <p class="pull">Different rooms. Same job.</p>
+          <p>Find where people are talking past each other, and close that gap. I believe collaboration and communication solve almost everything &mdash; at work, at home, on a tennis or pickleball court. And I believe you get there faster with clarity than with force. It&rsquo;s the shortest route I&rsquo;ve found.</p>
+          <p>Most people and most teams are one conversation away from the outcome they want.</p>
+          <p>Charisma you can practice in seven to nine minutes a day. A team that stops working around each other and starts performing. A business built on AI its leadership actually understands.</p>
+          <p class="pull">That&rsquo;s the bridge I build. That&rsquo;s why I&rsquo;m here.</p>
+        </div>
+        <div>
+          <p class="eyebrow mb-14">Career</p>
+          <ol class="tl">
+            <li class="now">
+              <span class="when">Now</span>
+              <span class="role">Founder</span>
+              <span class="org">ChantSolutions &mdash; digital products, Agile coaching, team facilitation</span>
+            </li>
+            <li>
+              <span class="when">Through Aug 2026</span>
+              <span class="role">Project &amp; Agile Development Manager, Coach, RTE</span>
+              <span class="org">Booz Allen Hamilton &mdash; defense and space programs, including the first generative AI deployed aboard the ISS</span>
+            </li>
+            <li>
+              <span class="when">Earlier</span>
+              <span class="role">Legal &amp; compliance, AI vehicle features</span>
+              <span class="org">Nissan North America, HQ</span>
+            </li>
+            <li>
+              <span class="when">Earlier</span>
+              <span class="role">Research &amp; analysis</span>
+              <span class="org">AllianceBernstein</span>
+            </li>
+            <li>
+              <span class="when">Earlier</span>
+              <span class="role">Research</span>
+              <span class="org">Vanderbilt University School of Medicine</span>
+            </li>
+          </ol>
+          <p class="eyebrow creds-label">Credentials</p>
+          <div class="tags">
+            <span class="tag">Juris Doctor</span>
+            <span class="tag">Trained mediator</span>
+            <span class="tag">PMP</span>
+            <span class="tag">CSM</span>
+            <span class="tag">SAFe 6.0 AI&#8209;Empowered RTE</span>
+            <span class="tag">ICP&#8209;ACC</span>
+            <span class="tag">ICP&#8209;ATF</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="framework" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The method everything runs on</p>
+        <h2>State &middot; Story &middot; Strategy</h2>
+        <div class="span-rule" role="presentation"><i></i></div>
+      </div>
+      <p class="lede">Three stages, in order &mdash; and the order is the method. You can&rsquo;t sort out what happened while your body is still braced for a fight, and you can&rsquo;t choose a strategy until you know which parts of the story you actually agree on.</p>
+      <div class="fw">
+        <div class="fw-step">
+          <span class="n">First &mdash; State</span>
+          <h3>Get your body out of threat before you open your mouth</h3>
+          <p>Breath check. Jaw check. Rate the emotional charge. A regulated nervous system isn&rsquo;t a nicety here &mdash; it is what makes the next two stages possible at all.</p>
+        </div>
+        <div class="fw-step">
+          <span class="n">Then &mdash; Story</span>
+          <h3>Separate what happened from what you made it mean</h3>
+          <p>Two people, two accounts, no villain. Name the facts you both agree on before you touch the interpretation.</p>
+        </div>
+        <div class="fw-step">
+          <span class="n">Finally &mdash; Strategy</span>
+          <h3>Pick the one outcome you actually need</h3>
+          <p>Not a script. A single defined ask, an opening line, and a decision about what you&rsquo;ll do if the answer is no.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Shipped &middot; In progress &middot; Queued</p>
+        <h2>What I&rsquo;ve built, what I&rsquo;m building</h2>
+        <div class="span-rule" role="presentation"><i></i></div>
+      </div>
+      <p class="lede mb-28">This board is honest, not promotional. The third column is a decision queue, not a roadmap &mdash; those are candidates I&rsquo;m still arguing with myself about.</p>
+
+      <div class="board">
+        <div>
+          <div class="col-head"><span class="dot shipped"></span><h3>Built</h3><span class="count">5</span></div>
+          <div class="cards">
+            <article class="card">
+              <h4>Sipra &mdash; communication training app</h4>
+              <p>Daily drills for speaking under pressure, structured on State&ndash;Story&ndash;Strategy. Native Flutter for iOS and Android on a Firebase backend, with a Cloud Function generating the drill content. A separate React prototype carries tester feedback.</p>
+              <div class="tags"><span class="tag">App</span><span class="tag">Flutter</span><span class="tag">In testing</span></div>
+            </article>
+            <article class="card">
+              <h4><a class="cardlink" href="https://siprachant.gumroad.com/l/ibckmi" target="_blank" rel="noopener noreferrer">The Patient Paddle</a></h4>
+              <p><i>How to Win More Points by Doing Less.</i> The same idea as the rest of my work, played out on a pickleball court &mdash; the patient player takes more points than the aggressive one. On sale now.</p>
+              <div class="tags"><span class="tag">eBook</span><span class="tag">On sale &mdash; $27</span></div>
+            </article>
+            <article class="card">
+              <h4>SayCheck</h4>
+              <p>A check&#8209;in tool for in&#8209;house communication at small businesses. Where Sipra trains one person&rsquo;s delivery, SayCheck works on how a team talks to each other.</p>
+              <div class="tags"><span class="tag">App</span><span class="tag">Small business</span></div>
+            </article>
+            <article class="card">
+              <h4>Difficult Conversations at Work: A Mediator&rsquo;s Playbook</h4>
+              <p>Complete manuscript &mdash; nine chapters and two appendices, roughly 70 pages, built end to end on the State&ndash;Story&ndash;Strategy framework.</p>
+              <div class="tags"><span class="tag">eBook</span><span class="tag">Draft complete</span></div>
+            </article>
+            <article class="card">
+              <h4>Coaching program &amp; discovery dashboard</h4>
+              <p>A paired set: the program itself (overview, curriculum, client toolkit, investment) and a screen&#8209;share dashboard that maps roadmap and pricing live on a discovery call.</p>
+              <div class="tags"><span class="tag">Offer</span><span class="tag">Sales tool</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div>
+          <div class="col-head"><span class="dot building"></span><h3>Building</h3><span class="count">3</span></div>
+          <div class="cards">
+            <article class="card">
+              <h4>Difficult Conversations prep app</h4>
+              <p>MVP spec is written: freemium, a guided three&#8209;step prep flow, a Prep Card you walk out with, and safety guardrails for abuse and threat inputs.</p>
+              <div class="tags"><span class="tag">React Native</span><span class="tag">Spec done</span></div>
+            </article>
+            <article class="card">
+              <h4>Hard Conversations template pack</h4>
+              <p>Canva templates for solopreneurs and small businesses, differentiated on the conflict&#8209;resolution content rather than the aesthetics. Three of five templates built; copy and layout documented for the last two.</p>
+              <div class="tags"><span class="tag">Canva</span><span class="tag">3 of 5</span></div>
+            </article>
+            <article class="card">
+              <h4>YouTube: AI as rehearsal partner</h4>
+              <p>One lane, chosen deliberately &mdash; using AI to rehearse real workplace situations, aimed at non&#8209;technical professionals. Coaching, explicitly not legal advice.</p>
+              <div class="tags"><span class="tag">Video</span><span class="tag">Channel setup</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div>
+          <div class="col-head"><span class="dot next"></span><h3>Deciding next</h3><span class="count">3</span></div>
+          <div class="cards">
+            <article class="card is-next">
+              <h4>Prove the State stage</h4>
+              <p class="why">The honest gap, and it now sits first. Story and Strategy have evidence behind them; State claims somatic mechanics I haven&rsquo;t yet demonstrated on the page. Leading with it raises the bar on proving it.</p>
+            </article>
+            <article class="card is-next">
+              <h4>Ship the book</h4>
+              <p class="why">The manuscript is done and sitting still. What&rsquo;s missing is a landing page and an email sequence &mdash; not more writing.</p>
+            </article>
+            <article class="card is-next">
+              <h4>AI&#8209;Assisted Conflict Resolution for Leaders</h4>
+              <p class="why">The pivot candidate: fold the mediation expertise into the AI&#8209;for&#8209;professionals positioning instead of running them as two businesses.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="guestbook-home"></div>
+</div>
+
+<!-- ================= LIBRARY ================= -->
+<div id="view-work" data-view-panel hidden>
+  <div class="wrap">
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">eBooks &amp; digital work</p>
+        <h2>The library</h2>
+        <div class="span-rule" role="presentation"><i></i></div>
+      </div>
+      <p class="lede mb-30">Everything I&rsquo;ve made that someone else can pick up and use. Status is marked plainly &mdash; a draft says draft.</p>
+      <div class="lib">
+        <article class="lib-item">
+          <div class="lib-cover cover-b"><span class="kind">eBook &middot; on sale</span></div>
+          <div class="lib-body">
+            <h4>The Patient Paddle</h4>
+            <p><i>How to Win More Points by Doing Less.</i> The patient player takes more points than the aggressive one &mdash; the same principle as the rest of my work, played out on a pickleball court.</p>
+            <div class="lib-meta">
+              <span class="status-pill pill-live">On sale &mdash; $27</span>
+              <a class="lib-buy" href="https://siprachant.gumroad.com/l/ibckmi" target="_blank" rel="noopener noreferrer">Get it on Gumroad &rarr;</a>
+            </div>
+          </div>
+        </article>
+        <article class="lib-item">
+          <div class="lib-cover cover-a"><span class="kind">eBook &middot; 9 chapters</span></div>
+          <div class="lib-body">
+            <h4>Difficult Conversations at Work</h4>
+            <p>A mediator&rsquo;s playbook. Roughly 70 pages across nine chapters and two appendices, teaching the State&ndash;Story&ndash;Strategy method through two&#8209;sided workplace examples with no villains.</p>
+            <div class="lib-meta"><span class="status-pill pill-draft">Draft complete</span></div>
+          </div>
+        </article>
+        <article class="lib-item">
+          <div class="lib-cover cover-c"><span class="kind">Templates &middot; Canva</span></div>
+          <div class="lib-body">
+            <h4>Hard Conversations Pack</h4>
+            <p>Canva templates for solopreneurs and small businesses, in the ChantSolutions brand system. Differentiated on the conflict&#8209;resolution content, not the layout.</p>
+            <div class="lib-meta"><span class="status-pill pill-wip">3 of 5 built</span></div>
+          </div>
+        </article>
+        <article class="lib-item">
+          <div class="lib-cover cover-d"><span class="kind">Template set</span></div>
+          <div class="lib-body">
+            <h4>State&ndash;Story&ndash;Strategy worksheets</h4>
+            <p>The framework as a fill&#8209;in set &mdash; one worksheet per stage, sized to be usable in the twenty minutes before a hard meeting.</p>
+            <div class="lib-meta"><span class="status-pill pill-wip">In progress</span></div>
+          </div>
+        </article>
+        <article class="lib-item">
+          <div class="lib-cover cover-c"><span class="kind">App &middot; teams</span></div>
+          <div class="lib-body">
+            <h4>SayCheck</h4>
+            <p>Check&#8209;ins for in&#8209;house communication at a small business &mdash; the team counterpart to Sipra. Same framework, aimed at how a group talks to each other rather than how one person delivers.</p>
+            <div class="lib-meta"><span class="status-pill pill-live">Built</span></div>
+          </div>
+        </article>
+        <article class="lib-item">
+          <div class="lib-cover cover-a"><span class="kind">App &middot; iOS &amp; Android</span></div>
+          <div class="lib-body">
+            <h4>Sipra</h4>
+            <p>Daily drills for speaking under pressure. Flutter, Firebase backend, Google sign&#8209;in, and AI&#8209;generated drill content behind a Cloud Function.</p>
+            <div class="lib-meta"><span class="status-pill pill-wip">In testing</span></div>
+          </div>
+        </article>
+        <article class="lib-item">
+          <div class="lib-cover cover-b"><span class="kind">App &middot; MVP spec</span></div>
+          <div class="lib-body">
+            <h4>Difficult Conversations prep</h4>
+            <p>Walk in with a Prep Card instead of a knot in your stomach. Freemium, three guided steps, and guardrails that route abuse and threat inputs away from coaching advice.</p>
+            <div class="lib-meta"><span class="status-pill pill-wip">Spec complete</span></div>
+          </div>
+        </article>
+        <article class="lib-item">
+          <div class="lib-cover cover-c"><span class="kind">Program</span></div>
+          <div class="lib-body">
+            <h4>Coaching program &amp; closer</h4>
+            <p>Overview, curriculum, client toolkit and investment in one place &mdash; plus a live discovery&#8209;call dashboard that builds the roadmap and price on screen with the client.</p>
+            <div class="lib-meta"><span class="status-pill pill-live">Built</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+  <div id="guestbook-work"></div>
+</div>
+
+<div id="view-privacy" data-view-panel hidden>
+  <div class="wrap">
+    <section>
+      <div class="sec-head">
+        <p class="eyebrow">Privacy &amp; security</p>
+        <h2>What this site knows about you</h2>
+        <div class="span-rule" role="presentation"><i></i></div>
+      </div>
+
+      <p class="lede mb-30">
+        Short version: if you only read, nothing about you is stored at all. If you sign the
+        guestbook, three things are &mdash; your email, the name you choose to display, and a
+        scrambled form of your password. You can download all of it or delete all of it from
+        your account panel, any time, without asking me.
+      </p>
+
+      <div class="policy">
+
+        <h3>What is collected, and why</h3>
+        <div class="tablewrap">
+          <table class="ptable">
+            <colgroup><col class="c-what"><col class="c-why"><col class="c-long"></colgroup>
+            <thead>
+              <tr><th scope="col">What</th><th scope="col">Why</th><th scope="col">How long</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Email address</td>
+                <td>To sign you in and identify your account. Never displayed to anyone else, never sold, never mailed to.</td>
+                <td>Until you delete your account</td>
+              </tr>
+              <tr>
+                <td>Display name</td>
+                <td>Shown publicly next to your notes, because a guestbook with anonymous notes isn&rsquo;t a guestbook.</td>
+                <td>Until you delete your account</td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>Not stored. What is stored is a scrypt hash &mdash; a one-way scramble that can check your password without revealing it.</td>
+                <td>Until you delete your account</td>
+              </tr>
+              <tr>
+                <td>Your notes and reactions</td>
+                <td>They are the point of the guestbook. Notes are public; reactions show as counts.</td>
+                <td>Until you delete them or your account</td>
+              </tr>
+              <tr>
+                <td>Session record</td>
+                <td>To keep you signed in. The browser cookie holds a random token; the database holds only a hash of it.</td>
+                <td>30 days, or until you sign out</td>
+              </tr>
+              <tr>
+                <td>Security log</td>
+                <td>Sign-ins, failed sign-ins and account changes, so a break-in attempt can be spotted and stopped.</td>
+                <td>30 days, then deleted automatically</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>What is deliberately not collected</h3>
+        <ul class="plist">
+          <li>No analytics, no advertising, no tracking pixels, no fingerprinting.</li>
+          <li>No IP address is ever stored against a note. IP addresses appear only in the security log, and only as a keyed hash whose salt changes every day &mdash; enough to notice a burst of failed sign-ins, not enough to trace anyone.</li>
+          <li>No third-party embeds that could watch you. The only outside request the page makes is to Google Fonts for two typefaces.</li>
+          <li>No data is sold, rented, or shared with anyone. There is no one to share it with.</li>
+        </ul>
+
+        <h3>Cookies</h3>
+        <p>
+          Two, both strictly necessary, both set only after you sign in: one holds your session
+          token, one holds a token that proves a form submission came from this page and not
+          from somewhere else. Neither tracks you, neither follows you off this site, and
+          there is no consent banner because there is nothing here that requires one.
+        </p>
+
+        <h3>What you can do, without asking</h3>
+        <ul class="plist">
+          <li><strong>See everything.</strong> One button in your account panel downloads a JSON file of every row this site holds about you, including the security log.</li>
+          <li><strong>Correct it.</strong> Change your display name or password in the same panel.</li>
+          <li><strong>Delete it.</strong> One button. Your account, sessions and reactions go immediately. You choose whether your notes go with them or stay with your name stripped off.</li>
+          <li><strong>Sign out everywhere.</strong> Ends every session on every device at once.</li>
+        </ul>
+
+        <h3>How it is protected</h3>
+        <ul class="plist">
+          <li>Passwords hashed with scrypt and a per-account random salt.</li>
+          <li>Session tokens stored only as hashes, so a stolen copy of the database hands over no live sessions.</li>
+          <li>Sign-in throttled per account and per source, and worded so it can&rsquo;t be used to discover who has an account here.</li>
+          <li>A strict Content Security Policy that permits only this page&rsquo;s own code, so an injected script has nowhere to run.</li>
+          <li>Every note is rendered as text, never as markup. Nothing anyone writes can execute.</li>
+        </ul>
+
+        <h3>Where things stand legally</h3>
+        <p>
+          Being straight with you about scope: this is a personal portfolio, and the privacy
+          statutes people usually name &mdash; California&rsquo;s CCPA/CPRA and the Tennessee
+          Information Protection Act &mdash; set revenue and volume thresholds far above
+          anything a site like this reaches, so neither currently binds it. The controls above
+          exist because they are the right way to hold someone else&rsquo;s data, not because a
+          regulator is asking. If that changes, the mechanisms are already here.
+        </p>
+        <p>
+          This page describes how the site actually works. It is not legal advice, and I hold a
+          Juris Doctor but am not licensed to practice law.
+        </p>
+
+        <h3>Questions, or a request I should handle myself</h3>
+        <p>
+          Email <a href="mailto:sipra.chant@gmail.com">sipra.chant@gmail.com</a>. Anything you
+          can do from the account panel happens instantly; anything else, I&rsquo;ll answer
+          within 30 days.
+        </p>
+
+        <p class="policy-version">Last updated 1 September 2026 &middot; version <span id="consent-version">2026-09-01</span></p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ================= GUESTBOOK (moved between views) ================= -->
+<section class="gb" id="guestbook">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Guestbook</p>
+      <h2>Say something</h2>
+      <div class="span-rule" role="presentation"><i></i></div>
+    </div>
+
+    <div class="gb-grid">
+      <div class="gb-side">
+
+        <!-- ============ signed out ============ -->
+        <div class="gb-form" id="authcard" hidden>
+          <div class="tabs" role="tablist" aria-label="Sign in or create an account">
+            <button type="button" class="tab" id="tab-signin" role="tab" aria-selected="true" aria-controls="signin">Sign in</button>
+            <button type="button" class="tab" id="tab-signup" role="tab" aria-selected="false" aria-controls="signup">Create account</button>
+          </div>
+
+          <form id="signin" role="tabpanel" aria-labelledby="tab-signin" novalidate>
+            <div class="field">
+              <label for="si-email">Email</label>
+              <input id="si-email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+            </div>
+            <div class="field">
+              <label for="si-pw">Password</label>
+              <input id="si-pw" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="msg err" id="si-err" hidden role="alert"></div>
+            <button class="btn btn-primary btn-block" type="submit" id="si-submit">Sign in</button>
+          </form>
+
+          <form id="signup" role="tabpanel" aria-labelledby="tab-signup" novalidate hidden>
+            <div class="field">
+              <label for="su-name">Display name</label>
+              <input id="su-name" name="displayName" type="text" maxlength="60" autocomplete="nickname" required>
+              <p class="hint">Shown publicly beside your notes. A first name is plenty.</p>
+            </div>
+            <div class="field">
+              <label for="su-email">Email</label>
+              <input id="su-email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+              <p class="hint">Never shown to anyone else. Used only to sign you in.</p>
+            </div>
+            <div class="field">
+              <label for="su-pw">Password</label>
+              <input id="su-pw" name="password" type="password" autocomplete="new-password" required>
+              <p class="hint">At least 12 characters. A short phrase you&rsquo;ll remember beats a jumble of symbols.</p>
+            </div>
+            <label class="check" for="su-consent">
+              <input type="checkbox" id="su-consent" name="consent">
+              <span>I&rsquo;ve read <a href="#/privacy" data-nav>how my data is handled</a> and I understand my display name and notes are shown publicly.</span>
+            </label>
+            <div class="msg err" id="su-err" hidden role="alert"></div>
+            <button class="btn btn-primary btn-block" type="submit" id="su-submit">Create account</button>
+          </form>
+
+          <p class="formnote">
+            Three things are stored: your email, your display name, and a scrambled form of your password.
+            No analytics, no trackers, and no IP address kept against anything you write.
+          </p>
+        </div>
+
+        <!-- ============ signed in ============ -->
+        <div class="gb-form" id="postcard" hidden>
+          <div class="whoami">
+            <span class="who-name" id="who-name"></span>
+            <span class="who-badge" id="who-admin" hidden>Moderator</span>
+          </div>
+
+          <form id="cform" novalidate>
+            <div class="field">
+              <label for="cbody">Your note</label>
+              <textarea id="cbody" name="body" maxlength="2000" placeholder="A question, a hello, or something you&rsquo;d want built." required></textarea>
+              <div class="counter" id="ccount">0 / 2000</div>
+            </div>
+            <div class="msg err" id="cerr" hidden role="alert"></div>
+            <div class="msg ok" id="cok" hidden role="status"></div>
+            <button class="btn btn-primary btn-block" id="csubmit" type="submit">Post note</button>
+          </form>
+
+          <div class="acct">
+            <button type="button" class="linkbtn" id="acct-toggle" aria-expanded="false" aria-controls="acct-panel">
+              Your account &amp; your data
+            </button>
+
+            <div id="acct-panel" hidden>
+              <p class="acct-meta" id="acct-meta"></p>
+
+              <form id="rename" novalidate>
+                <div class="field">
+                  <label for="rn-name">Display name</label>
+                  <input id="rn-name" name="displayName" type="text" maxlength="60" required>
+                </div>
+                <button class="btn btn-ghost btn-block btn-sm" type="submit" id="rn-submit">Save name</button>
+              </form>
+
+              <form id="repw" novalidate>
+                <div class="field">
+                  <label for="pw-current">Current password</label>
+                  <input id="pw-current" name="currentPassword" type="password" autocomplete="current-password" required>
+                </div>
+                <div class="field">
+                  <label for="pw-new">New password</label>
+                  <input id="pw-new" name="newPassword" type="password" autocomplete="new-password" required>
+                </div>
+                <button class="btn btn-ghost btn-block btn-sm" type="submit" id="pw-submit">Change password</button>
+                <p class="hint">Changing your password signs you out everywhere else.</p>
+              </form>
+
+              <div class="msg err" id="acct-err" hidden role="alert"></div>
+              <div class="msg ok" id="acct-ok" hidden role="status"></div>
+
+              <div class="acct-actions">
+                <a class="btn btn-ghost btn-block btn-sm" id="export-link" href="/api/me/export">Download everything I hold about you</a>
+                <button type="button" class="btn btn-ghost btn-block btn-sm" id="signout">Sign out</button>
+                <button type="button" class="btn btn-ghost btn-block btn-sm" id="signout-all">Sign out on every device</button>
+              </div>
+
+              <div class="danger">
+                <p class="danger-head">Delete your account</p>
+                <p class="hint">This removes your account, your sessions, and your reactions, permanently and immediately. Choose what happens to your notes.</p>
+                <form id="delacct" novalidate>
+                  <div class="field">
+                    <label for="del-pw">Confirm with your password</label>
+                    <input id="del-pw" name="password" type="password" autocomplete="current-password" required>
+                  </div>
+                  <fieldset class="radios">
+                    <legend>Your notes</legend>
+                    <label class="check" for="del-comments"><input type="radio" id="del-comments" name="delmode" value="delete" checked><span>Delete them too</span></label>
+                    <label class="check" for="del-keep"><input type="radio" id="del-keep" name="delmode" value="keep"><span>Leave them, with my name removed</span></label>
+                  </fieldset>
+                  <div class="msg err" id="del-err" hidden role="alert"></div>
+                  <button class="btn btn-danger btn-block btn-sm" type="submit" id="del-submit">Permanently delete my account</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ preview mode (no server) ============ -->
+        <div class="gb-form" id="previewcard" hidden>
+          <form id="pform" novalidate>
+            <div class="field">
+              <label for="pname">Your name</label>
+              <input id="pname" name="name" type="text" maxlength="60" autocomplete="name" placeholder="Who&rsquo;s writing?" required>
+            </div>
+            <div class="field">
+              <label for="pbody">Your note</label>
+              <textarea id="pbody" name="body" maxlength="2000" placeholder="A question, a hello, or something you&rsquo;d want built." required></textarea>
+              <div class="counter" id="pcount">0 / 2000</div>
+            </div>
+            <div class="msg err" id="perr" hidden role="alert"></div>
+            <div class="msg ok" id="pok" hidden role="status"></div>
+            <button class="btn btn-primary btn-block" id="psubmit" type="submit">Post note</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="gb-list-wrap">
+        <div class="gb-toolbar">
+          <p class="eyebrow">Notes</p>
+          <span class="n" id="ccount-total"></span>
+        </div>
+        <div class="gb-list" id="clist" aria-live="polite" aria-busy="true">
+          <div class="skeleton"></div>
+          <div class="skeleton skeleton-sm"></div>
+        </div>
+        <p class="offline" id="coffline" hidden></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="span-rule" role="presentation"><i></i></div>
+    <div class="foot mt-26">
+      <div>
+        <p><strong class="foot-strong">ChantSolutions</strong> &mdash; Murfreesboro, Tennessee</p>
+        <p class="mt-4"><a href="mailto:sipra.chant@gmail.com">sipra.chant@gmail.com</a> &middot; <a href="#/privacy" data-nav>Privacy &amp; your data</a></p>
+      </div>
+      <p>&copy; <span id="yr">2026</span> Siprachanh Chanthaphaychith</p>
+    </div>
+    <p class="disclaimer">I hold a Juris Doctor but am not licensed to practice law. Everything here &mdash; the writing, the tools, the coaching &mdash; is professional coaching and facilitation, not legal advice, and no attorney&ndash;client relationship is created by using it.</p>
+  </div>
+</footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  /* =================================================================== theme */
+  var root = document.documentElement;
+  var THEME_KEY = "sippy.theme";
+  function readStored(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function writeStored(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+  var stored = readStored(THEME_KEY);
+  if (stored === "dark" || stored === "light") root.setAttribute("data-theme", stored);
+
+  function currentTheme() {
+    var attr = root.getAttribute("data-theme");
+    if (attr === "dark" || attr === "light") return attr;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  var themebtn = document.getElementById("themebtn");
+  if (themebtn) {
+    themebtn.addEventListener("click", function () {
+      var next = currentTheme() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      writeStored(THEME_KEY, next);
+      themebtn.setAttribute("aria-label", next === "dark" ? "Switch to light theme" : "Switch to dark theme");
+    });
+  }
+  var yr = document.getElementById("yr");
+  if (yr) yr.textContent = String(new Date().getFullYear());
+
+  /* ================================================================= routing */
+  var panels = {
+    home: document.getElementById("view-home"),
+    work: document.getElementById("view-work"),
+    privacy: document.getElementById("view-privacy")
+  };
+  var gb = document.getElementById("guestbook");
+  var slots = {
+    home: document.getElementById("guestbook-home"),
+    work: document.getElementById("guestbook-work")
+  };
+  var TITLES = {
+    home: "Sippy Chanthaphaychith",
+    work: "Library — Sippy Chanthaphaychith",
+    privacy: "Privacy — Sippy Chanthaphaychith"
+  };
+
+  function viewFromHash(h) {
+    var s = String(h || "").replace(/^#/, "").replace(/^\//, "");
+    if (s === "work") return "work";
+    if (s === "privacy") return "privacy";
+    return "home";
+  }
+
+  function render(view, opts) {
+    opts = opts || {};
+    Object.keys(panels).forEach(function (k) {
+      if (panels[k]) panels[k].hidden = k !== view;
+    });
+    // One guestbook node, moved into whichever view should show it. Views with
+    // no slot — the privacy notice — park it inside the hidden Home panel, so
+    // landing straight on #/privacy never leaves a guestbook floating below it.
+    var slot = slots[view] || slots.home;
+    if (gb && slot && gb.parentNode !== slot) slot.appendChild(gb);
+    document.querySelectorAll(".navlinks a[data-view]").forEach(function (a) {
+      if (a.getAttribute("data-view") === view) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    document.title = TITLES[view] || TITLES.home;
+    if (!opts.silent) window.scrollTo({ top: 0, behavior: opts.instant ? "auto" : "smooth" });
+  }
+
+  function applyHash(instant) {
+    var raw = String(location.hash || "");
+    if (raw === "#guestbook") {
+      var el = document.getElementById("guestbook");
+      if (el) el.scrollIntoView({ behavior: instant ? "auto" : "smooth", block: "start" });
+      return;
+    }
+    render(viewFromHash(raw), { instant: instant });
+  }
+
+  document.addEventListener("click", function (e) {
+    var jump = e.target.closest && e.target.closest("a[data-jump]");
+    if (jump) {
+      e.preventDefault();
+      // The guestbook only lives on Home and Library — bounce back if we're elsewhere.
+      if (!document.getElementById("guestbook").offsetParent) location.hash = "#/";
+      var el = document.getElementById(jump.getAttribute("href").slice(1));
+      if (el) setTimeout(function () { el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 30);
+      return;
+    }
+    var nav = e.target.closest && e.target.closest("a[data-nav]");
+    if (nav) {
+      e.preventDefault();
+      var href = nav.getAttribute("href") || "#/";
+      if (location.hash === href) applyHash(true);
+      else location.hash = href;
+    }
+  });
+  window.addEventListener("hashchange", function () { applyHash(false); });
+  applyHash(true);
+
+  /* ============================================================ http client */
+  var KINDS = ["up", "heart", "rocket"];
+  var EMOJI = { up: "👍", heart: "❤️", rocket: "🚀" };
+  var LABEL = { up: "Thumbs up", heart: "Heart", rocket: "Rocket" };
+
+  function cookie(name) {
+    var parts = String(document.cookie || "").split(";");
+    for (var i = 0; i < parts.length; i++) {
+      var kv = parts[i].split("=");
+      if (kv[0].trim() === name) {
+        try { return decodeURIComponent(kv.slice(1).join("=").trim()); }
+        catch (e) { return kv.slice(1).join("=").trim(); }
+      }
+    }
+    return null;
+  }
+
+  function api(path, opts) {
+    opts = opts || {};
+    var headers = { "Accept": "application/json" };
+    if (opts.body !== undefined) headers["Content-Type"] = "application/json";
+    var token = cookie("csrf");
+    if (token) headers["X-CSRF-Token"] = token;
+    return fetch(path, {
+      method: opts.method || "GET",
+      credentials: "same-origin",
+      headers: headers,
+      body: opts.body === undefined ? undefined : JSON.stringify(opts.body)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (!r.ok) {
+          var e = new Error((j && j.error) || "That didn't work. Try again in a moment.");
+          e.status = r.status;
+          throw e;
+        }
+        return j;
+      });
+    });
+  }
+
+  function newId() {
+    var b = new Uint8Array(10);
+    (window.crypto || window.msCrypto).getRandomValues(b);
+    var s = "c" + Date.now().toString(36);
+    for (var i = 0; i < b.length; i++) s += b[i].toString(36);
+    return s.slice(0, 48);
+  }
+
+  /* ================================================================= stores */
+
+  /** The deployed site: real accounts, real sessions. */
+  function httpStore() {
+    var listeners = [];
+    var cache = [];
+    var timer = null;
+
+    function emit() { listeners.forEach(function (fn) { fn(cache); }); }
+    function refresh() {
+      return api("/api/comments").then(function (j) {
+        cache = (j && j.comments) || [];
+        emit();
+        return cache;
+      });
+    }
+    return {
+      kind: "http",
+      hasAccounts: true,
+      subscribe: function (fn) {
+        listeners.push(fn);
+        refresh().catch(function () { emit(); });
+        if (!timer) timer = setInterval(function () { refresh().catch(function () {}); }, 20000);
+        return function () { listeners = listeners.filter(function (l) { return l !== fn; }); };
+      },
+      session: function () { return api("/api/session"); },
+      register: function (payload) { return api("/api/auth/register", { method: "POST", body: payload }); },
+      login: function (payload) { return api("/api/auth/login", { method: "POST", body: payload }); },
+      logout: function () { return api("/api/auth/logout", { method: "POST", body: {} }); },
+      logoutAll: function () { return api("/api/auth/logout-all", { method: "POST", body: {} }); },
+      patchMe: function (payload) { return api("/api/me", { method: "PATCH", body: payload }); },
+      deleteMe: function (payload) { return api("/api/me", { method: "DELETE", body: payload }); },
+      add: function (_name, body) { return api("/api/comments", { method: "POST", body: { body: body } }).then(refresh); },
+      remove: function (id) { return api("/api/comments/" + encodeURIComponent(id), { method: "DELETE" }).then(refresh); },
+      react: function (id, kind) {
+        return api("/api/comments/" + encodeURIComponent(id) + "/reactions", { method: "POST", body: { kind: kind } })
+          .then(refresh);
+      },
+      refresh: refresh
+    };
+  }
+
+  /** Published-artifact preview: shared store, no accounts to sign in to. */
+  function dbStore(db) {
+    var vid = readStored("sippy.vid");
+    if (!vid || !/^[A-Za-z0-9_-]{4,64}$/.test(vid)) {
+      var bytes = new Uint8Array(12);
+      (window.crypto || window.msCrypto).getRandomValues(bytes);
+      vid = "v";
+      for (var i = 0; i < bytes.length; i++) vid += bytes[i].toString(36);
+      vid = vid.slice(0, 40);
+      writeStored("sippy.vid", vid);
+    }
+
+    var comments = [];
+    var reactions = {};
+    var listeners = [];
+    var ready = false;
+
+    function shape() {
+      return comments.map(function (c) {
+        var per = reactions[c.id] || {};
+        var counts = { up: 0, heart: 0, rocket: 0 };
+        var mine = { up: false, heart: false, rocket: false };
+        Object.keys(per).forEach(function (who) {
+          (per[who] || []).forEach(function (k) {
+            if (counts[k] === undefined) return;
+            counts[k]++;
+            if (who === vid) mine[k] = true;
+          });
+        });
+        return {
+          id: c.id, name: c.name, body: c.body, createdAt: c.createdAt,
+          isMine: c.vid === vid, reactions: counts, mine: mine
+        };
+      });
+    }
+    function emit() { if (ready) listeners.forEach(function (fn) { fn(shape()); }); }
+
+    db.collection("comments").orderBy("ts", "desc").limit(200).onSnapshot(function (snap) {
+      comments = snap.docs.map(function (d) {
+        var v = d.data() || {};
+        return {
+          id: d.id,
+          name: typeof v.name === "string" ? v.name : "",
+          body: typeof v.body === "string" ? v.body : "",
+          vid: typeof v.vid === "string" ? v.vid : "",
+          createdAt: typeof v.createdAt === "string" ? v.createdAt : new Date(Number(v.ts) || Date.now()).toISOString()
+        };
+      });
+      ready = true;
+      emit();
+    }, function () { ready = true; emit(); });
+
+    db.collection("reactions").limit(1000).onSnapshot(function (snap) {
+      var next = {};
+      snap.docs.forEach(function (d) {
+        var v = d.data() || {};
+        var cid = String(v.cid || ""), who = String(v.vid || "");
+        if (!cid || !who) return;
+        var ks = Array.isArray(v.kinds) ? v.kinds.filter(function (k) { return KINDS.indexOf(k) !== -1; }) : [];
+        if (!next[cid]) next[cid] = {};
+        next[cid][who] = ks;
+      });
+      reactions = next;
+      emit();
+    }, function () { emit(); });
+
+    return {
+      kind: "db",
+      hasAccounts: false,
+      subscribe: function (fn) {
+        listeners.push(fn);
+        if (ready) fn(shape());
+        return function () { listeners = listeners.filter(function (l) { return l !== fn; }); };
+      },
+      add: function (name, body) {
+        var id = newId();
+        return db.doc("comments/" + id).set({
+          name: name, body: body, vid: vid, ts: Date.now(), createdAt: new Date().toISOString()
+        });
+      },
+      remove: function (id) { return db.doc("comments/" + id).delete(); },
+      react: function (cid, kind) {
+        var per = (reactions[cid] || {})[vid] || [];
+        var next = per.indexOf(kind) === -1 ? per.concat([kind]) : per.filter(function (k) { return k !== kind; });
+        if (!reactions[cid]) reactions[cid] = {};
+        reactions[cid][vid] = next;
+        emit();
+        return db.doc("reactions/" + cid + "__" + vid).set({ cid: cid, vid: vid, kinds: next, ts: Date.now() });
+      }
+    };
+  }
+
+  /** Nothing reachable: this browser only, and the page says so. */
+  function localStore() {
+    var KEY = "sippy.guestbook";
+    var listeners = [];
+    function load() {
+      try { var v = JSON.parse(localStorage.getItem(KEY) || "[]"); return Array.isArray(v) ? v : []; }
+      catch (e) { return []; }
+    }
+    function save(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} }
+    function emit() { var v = load(); listeners.forEach(function (fn) { fn(v); }); }
+    return {
+      kind: "local",
+      hasAccounts: false,
+      subscribe: function (fn) { listeners.push(fn); fn(load()); return function () { listeners = listeners.filter(function (l) { return l !== fn; }); }; },
+      add: function (name, body) {
+        var v = load();
+        v.unshift({
+          id: newId(), name: name, body: body, createdAt: new Date().toISOString(), isMine: true,
+          reactions: { up: 0, heart: 0, rocket: 0 }, mine: { up: false, heart: false, rocket: false }
+        });
+        save(v.slice(0, 200)); emit();
+        return Promise.resolve();
+      },
+      remove: function (id) { save(load().filter(function (c) { return c.id !== id; })); emit(); return Promise.resolve(); },
+      react: function (id, kind) {
+        var v = load();
+        for (var i = 0; i < v.length; i++) {
+          if (v[i].id === id) {
+            v[i].mine = v[i].mine || { up: false, heart: false, rocket: false };
+            v[i].reactions = v[i].reactions || { up: 0, heart: 0, rocket: 0 };
+            var on = !!v[i].mine[kind];
+            v[i].mine[kind] = !on;
+            v[i].reactions[kind] = Math.max(0, (v[i].reactions[kind] || 0) + (on ? -1 : 1));
+            break;
+          }
+        }
+        save(v); emit();
+        return Promise.resolve();
+      }
+    };
+  }
+
+  /* ===================================================================== UI */
+  var el = function (id) { return document.getElementById(id); };
+
+  var list = el("clist");
+  var totalEl = el("ccount-total");
+  var offlineEl = el("coffline");
+  var authcard = el("authcard");
+  var postcard = el("postcard");
+  var previewcard = el("previewcard");
+
+  var store = null;
+  var user = null;
+  var busy = {};
+
+  function show(node, on) { if (node) node.hidden = !on; }
+  function setMsg(node, text) {
+    if (!node) return;
+    if (text) { node.textContent = text; node.hidden = false; }
+    else { node.textContent = ""; node.hidden = true; }
+  }
+
+  function when(iso) {
+    var t = Date.parse(iso);
+    if (!isFinite(t)) return "";
+    var diff = Math.floor((Date.now() - t) / 1000);
+    if (diff < 0) diff = 0;
+    if (diff < 60) return "just now";
+    if (diff < 3600) return Math.floor(diff / 60) + "m ago";
+    if (diff < 86400) return Math.floor(diff / 3600) + "h ago";
+    if (diff < 604800) return Math.floor(diff / 86400) + "d ago";
+    try { return new Date(t).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); }
+    catch (e) { return new Date(t).toDateString(); }
+  }
+
+  function draw(items) {
+    list.setAttribute("aria-busy", "false");
+    list.textContent = "";
+    totalEl.textContent = items.length ? items.length + (items.length === 1 ? " note" : " notes") : "";
+
+    if (!items.length) {
+      var empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = "No notes yet. Yours would be the first.";
+      list.appendChild(empty);
+      return;
+    }
+
+    items.forEach(function (c) {
+      var art = document.createElement("article");
+      art.className = "comment";
+      art.setAttribute("data-id", c.id);
+
+      var top = document.createElement("div");
+      top.className = "c-top";
+      var nm = document.createElement("span");
+      nm.className = "c-name";
+      nm.textContent = c.name;                        // textContent, never innerHTML
+      var wh = document.createElement("time");
+      wh.className = "c-when";
+      wh.textContent = when(c.createdAt);
+      if (c.createdAt) wh.setAttribute("datetime", c.createdAt);
+      top.appendChild(nm);
+      top.appendChild(wh);
+
+      var canDelete = store && store.remove && (c.isMine || (user && user.isAdmin));
+      if (canDelete) {
+        var del = document.createElement("button");
+        del.type = "button";
+        del.className = "c-del";
+        del.textContent = "Delete";
+        del.setAttribute("aria-label", "Delete this note by " + c.name);
+        del.addEventListener("click", function () { onDelete(c.id, del); });
+        top.appendChild(del);
+      }
+
+      var bd = document.createElement("p");
+      bd.className = "c-body";
+      bd.textContent = c.body;                        // textContent, never innerHTML
+
+      var rx = document.createElement("div");
+      rx.className = "rx";
+      KINDS.forEach(function (k) {
+        var n = (c.reactions && c.reactions[k]) || 0;
+        var on = !!(c.mine && c.mine[k]);
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "rx-btn";
+        b.setAttribute("data-kind", k);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+        b.setAttribute("aria-label", LABEL[k] + ", " + n + (n === 1 ? " reaction" : " reactions"));
+        var e1 = document.createElement("span"); e1.className = "emo"; e1.setAttribute("aria-hidden", "true"); e1.textContent = EMOJI[k];
+        var e2 = document.createElement("span"); e2.className = "n"; e2.textContent = String(n);
+        b.appendChild(e1); b.appendChild(e2);
+        b.addEventListener("click", function () { onReact(c.id, k, b); });
+        rx.appendChild(b);
+      });
+
+      art.appendChild(top); art.appendChild(bd); art.appendChild(rx);
+      list.appendChild(art);
+    });
+  }
+
+  function onReact(id, kind, btn) {
+    if (!store) return;
+    if (store.hasAccounts && !user) {
+      setMsg(el("si-err"), "Sign in to react to a note.");
+      var t = el("tab-signin"); if (t) t.click();
+      var f = el("si-email"); if (f) f.focus();
+      return;
+    }
+    var key = id + ":" + kind;
+    if (busy[key]) return;
+    busy[key] = true;
+    btn.disabled = true;
+    Promise.resolve(store.react(id, kind))
+      .catch(function (err) { setMsg(el("cerr"), (err && err.message) || "That reaction didn't save."); })
+      .then(function () { busy[key] = false; btn.disabled = false; });
+  }
+
+  function onDelete(id, btn) {
+    if (!store || !store.remove) return;
+    if (btn.getAttribute("data-confirm") !== "1") {
+      btn.setAttribute("data-confirm", "1");
+      btn.textContent = "Really delete?";
+      setTimeout(function () {
+        if (btn.isConnected) { btn.removeAttribute("data-confirm"); btn.textContent = "Delete"; }
+      }, 4000);
+      return;
+    }
+    btn.disabled = true;
+    Promise.resolve(store.remove(id))
+      .catch(function (err) { setMsg(el("cerr"), (err && err.message) || "Couldn't delete that note."); btn.disabled = false; });
+  }
+
+  /* ------------------------------------------------------- account state -- */
+
+  function applyUser(u) {
+    user = u || null;
+    if (!store || !store.hasAccounts) return;
+    // Signing out clears the CSRF cookie along with the session. Without a
+    // fresh one the next sign-in would be refused, so ask for one straight away.
+    if (!user && !cookie("csrf") && store.session) {
+      store.session().catch(function () {});
+    }
+    show(authcard, !user);
+    show(postcard, !!user);
+    show(previewcard, false);
+    if (user) {
+      el("who-name").textContent = user.displayName;
+      show(el("who-admin"), !!user.isAdmin);
+      el("rn-name").value = user.displayName;
+      var since = user.memberSince ? new Date(user.memberSince) : null;
+      el("acct-meta").textContent = user.email + (since && isFinite(since) ? " · here since " + since.toLocaleDateString(undefined, { year: "numeric", month: "long" }) : "");
+    }
+    if (store.refresh) store.refresh().catch(function () {});
+  }
+
+  /* --------------------------------------------------------- auth wiring -- */
+
+  function wireTabs() {
+    var tSignin = el("tab-signin"), tSignup = el("tab-signup");
+    var pSignin = el("signin"), pSignup = el("signup");
+    if (!tSignin) return;
+    function select(which) {
+      var inSignin = which === "signin";
+      tSignin.setAttribute("aria-selected", inSignin ? "true" : "false");
+      tSignup.setAttribute("aria-selected", inSignin ? "false" : "true");
+      pSignin.hidden = !inSignin;
+      pSignup.hidden = inSignin;
+    }
+    tSignin.addEventListener("click", function () { select("signin"); });
+    tSignup.addEventListener("click", function () { select("signup"); });
+  }
+
+  function submitting(btn, label) {
+    btn.disabled = true;
+    btn.dataset.label = btn.textContent;
+    btn.textContent = label;
+    return function () { btn.disabled = false; btn.textContent = btn.dataset.label; };
+  }
+
+  function wireAuth() {
+    var signin = el("signin");
+    if (signin) {
+      signin.addEventListener("submit", function (e) {
+        e.preventDefault();
+        setMsg(el("si-err"), "");
+        var email = el("si-email").value.trim();
+        var pw = el("si-pw").value;
+        if (!email) { setMsg(el("si-err"), "Enter your email."); el("si-email").focus(); return; }
+        if (!pw) { setMsg(el("si-err"), "Enter your password."); el("si-pw").focus(); return; }
+        var done = submitting(el("si-submit"), "Signing in…");
+        store.login({ email: email, password: pw })
+          .then(function (j) { el("si-pw").value = ""; applyUser(j.user); })
+          .catch(function (err) { setMsg(el("si-err"), err.message); })
+          .then(done);
+      });
+    }
+
+    var signup = el("signup");
+    if (signup) {
+      signup.addEventListener("submit", function (e) {
+        e.preventDefault();
+        setMsg(el("su-err"), "");
+        var name = el("su-name").value.trim();
+        var email = el("su-email").value.trim();
+        var pw = el("su-pw").value;
+        var consent = el("su-consent").checked;
+        if (!name) { setMsg(el("su-err"), "Pick a display name."); el("su-name").focus(); return; }
+        if (!email) { setMsg(el("su-err"), "Enter your email."); el("su-email").focus(); return; }
+        if (pw.length < 12) { setMsg(el("su-err"), "Passwords need at least 12 characters."); el("su-pw").focus(); return; }
+        if (!consent) { setMsg(el("su-err"), "Please tick the box to confirm you've read how your data is handled."); el("su-consent").focus(); return; }
+        var done = submitting(el("su-submit"), "Creating…");
+        store.register({ email: email, displayName: name, password: pw, consent: true })
+          .then(function (j) { el("su-pw").value = ""; applyUser(j.user); })
+          .catch(function (err) { setMsg(el("su-err"), err.message); })
+          .then(done);
+      });
+    }
+
+    var toggle = el("acct-toggle");
+    if (toggle) {
+      toggle.addEventListener("click", function () {
+        var open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", open ? "false" : "true");
+        el("acct-panel").hidden = open;
+      });
+    }
+
+    var rename = el("rename");
+    if (rename) {
+      rename.addEventListener("submit", function (e) {
+        e.preventDefault();
+        setMsg(el("acct-err"), ""); setMsg(el("acct-ok"), "");
+        var name = el("rn-name").value.trim();
+        if (!name) { setMsg(el("acct-err"), "Display name can't be empty."); return; }
+        var done = submitting(el("rn-submit"), "Saving…");
+        store.patchMe({ displayName: name })
+          .then(function (j) { applyUser(j.user); setMsg(el("acct-ok"), "Name updated. It shows on new notes; older ones keep the name you used then."); })
+          .catch(function (err) { setMsg(el("acct-err"), err.message); })
+          .then(done);
+      });
+    }
+
+    var repw = el("repw");
+    if (repw) {
+      repw.addEventListener("submit", function (e) {
+        e.preventDefault();
+        setMsg(el("acct-err"), ""); setMsg(el("acct-ok"), "");
+        var cur = el("pw-current").value, next = el("pw-new").value;
+        if (!cur) { setMsg(el("acct-err"), "Enter your current password."); return; }
+        if (next.length < 12) { setMsg(el("acct-err"), "New passwords need at least 12 characters."); return; }
+        var done = submitting(el("pw-submit"), "Changing…");
+        store.patchMe({ currentPassword: cur, newPassword: next })
+          .then(function () {
+            el("pw-current").value = ""; el("pw-new").value = "";
+            setMsg(el("acct-ok"), "Password changed. Every other device has been signed out.");
+          })
+          .catch(function (err) { setMsg(el("acct-err"), err.message); })
+          .then(done);
+      });
+    }
+
+    var out = el("signout");
+    if (out) {
+      out.addEventListener("click", function () {
+        store.logout().then(function () { applyUser(null); }).catch(function () { applyUser(null); });
+      });
+    }
+    var outAll = el("signout-all");
+    if (outAll) {
+      outAll.addEventListener("click", function () {
+        store.logoutAll().then(function () { applyUser(null); }).catch(function () { applyUser(null); });
+      });
+    }
+
+    var del = el("delacct");
+    if (del) {
+      del.addEventListener("submit", function (e) {
+        e.preventDefault();
+        setMsg(el("del-err"), "");
+        var pw = el("del-pw").value;
+        if (!pw) { setMsg(el("del-err"), "Enter your password to confirm."); return; }
+        var mode = el("del-keep").checked ? "keep" : "delete";
+        var btn = el("del-submit");
+        if (btn.getAttribute("data-confirm") !== "1") {
+          btn.setAttribute("data-confirm", "1");
+          btn.textContent = "Press again to delete permanently";
+          setTimeout(function () {
+            if (btn.isConnected) { btn.removeAttribute("data-confirm"); btn.textContent = "Permanently delete my account"; }
+          }, 6000);
+          return;
+        }
+        var done = submitting(btn, "Deleting…");
+        store.deleteMe({ password: pw, comments: mode })
+          .then(function () {
+            el("del-pw").value = "";
+            btn.removeAttribute("data-confirm");
+            applyUser(null);
+            el("acct-panel").hidden = true;
+            el("acct-toggle").setAttribute("aria-expanded", "false");
+            setMsg(el("si-err"), "Your account and its data are gone. Thanks for stopping by.");
+          })
+          .catch(function (err) { setMsg(el("del-err"), err.message); btn.removeAttribute("data-confirm"); })
+          .then(function () { done(); btn.textContent = "Permanently delete my account"; });
+      });
+    }
+  }
+
+  /* ------------------------------------------------------- posting forms -- */
+
+  function wireCounter(area, counter) {
+    if (!area) return;
+    area.addEventListener("input", function () {
+      var n = area.value.length;
+      counter.textContent = n + " / 2000";
+      counter.classList.toggle("over", n > 2000);
+    });
+  }
+  wireCounter(el("cbody"), el("ccount"));
+  wireCounter(el("pbody"), el("pcount"));
+
+  function handlePost(opts) {
+    return function (e) {
+      e.preventDefault();
+      setMsg(opts.err, ""); setMsg(opts.ok, "");
+      var name = opts.name ? opts.name.value.replace(/\s+/g, " ").trim() : (user ? user.displayName : "");
+      var body = opts.body.value.trim();
+
+      if (opts.name && !name) { setMsg(opts.err, "Add your name so Sippy knows who wrote this."); opts.name.focus(); return; }
+      if (opts.name && name.length > 60) { setMsg(opts.err, "Names cap at 60 characters."); opts.name.focus(); return; }
+      if (!body) { setMsg(opts.err, "Write a note before posting."); opts.body.focus(); return; }
+      if (body.length > 2000) { setMsg(opts.err, "Notes cap at 2000 characters. Yours is " + body.length + "."); opts.body.focus(); return; }
+
+      var done = submitting(opts.submit, "Posting…");
+      Promise.resolve(store.add(name, body)).then(function () {
+        opts.body.value = "";
+        opts.counter.textContent = "0 / 2000";
+        opts.counter.classList.remove("over");
+        setMsg(opts.ok, "Posted. Thanks for the note.");
+        if (opts.name) writeStored("sippy.name", name);
+      }).catch(function (err) {
+        setMsg(opts.err, (err && err.message) || "That didn't post. Try again in a moment.");
+      }).then(done);
+    };
+  }
+
+  var cform = el("cform");
+  if (cform) {
+    cform.addEventListener("submit", handlePost({
+      body: el("cbody"), err: el("cerr"), ok: el("cok"), submit: el("csubmit"), counter: el("ccount")
+    }));
+  }
+  var pform = el("pform");
+  if (pform) {
+    pform.addEventListener("submit", handlePost({
+      name: el("pname"), body: el("pbody"), err: el("perr"), ok: el("pok"),
+      submit: el("psubmit"), counter: el("pcount")
+    }));
+  }
+  var savedName = readStored("sippy.name");
+  if (savedName && el("pname")) el("pname").value = savedName;
+
+  wireTabs();
+
+  /* ========================================================= pick a backend */
+
+  function useStore(s, note) {
+    store = s;
+    window.__store = s;
+    if (note) { offlineEl.textContent = note; offlineEl.hidden = false; }
+    if (s.hasAccounts) {
+      wireAuth();
+      s.session()
+        .then(function (j) { applyUser(j.user); })
+        .catch(function () { applyUser(null); });
+    } else {
+      show(authcard, false);
+      show(postcard, false);
+      show(previewcard, true);
+    }
+    s.subscribe(draw);
+  }
+
+  function probeHttp() {
+    return fetch("/api/health", { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("no api")); })
+      .then(function (j) { if (!j || j.ok !== true) throw new Error("no api"); return true; });
+  }
+
+  var capPromise = (window.claude && typeof window.claude.use === "function")
+    ? window.claude.use("db").catch(function () { return null; })
+    : Promise.resolve(null);
+
+  probeHttp().then(function () {
+    useStore(httpStore(), null);
+  }).catch(function () {
+    capPromise.then(function (db) {
+      if (db) {
+        useStore(dbStore(db),
+          "Preview mode. Accounts and sign-in live on the deployed site; here, notes are shared but there is no sign-in, so anyone viewing can post under any name.");
+      } else {
+        useStore(localStore(),
+          "Preview mode with no shared backend, so notes are saved only in this browser. Deploy the included server to turn on accounts and a shared guestbook.");
+      }
+    }).catch(function () {
+      useStore(localStore(), "Preview mode: notes are saved only in this browser.");
+    });
+  });
+})();
+</script>

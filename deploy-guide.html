@@ -1,0 +1,362 @@
+<title>Two Domains, One Afternoon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --paper:#F7F8FA;
+  --surface:#FFFFFF;
+  --surface-2:#EFF2F6;
+  --ink:#17202B;
+  --ink-2:#3D4A5A;
+  --ink-3:#5A6675;
+  --rule:#DDE2E9;
+  --rule-2:#C3CCD8;
+  --accent:#2B5CE6;
+  --accent-soft:#E8EDFC;
+  --warn:#B45309;
+  --warn-soft:#FDF3E4;
+  --good:#15803D;
+  --good-soft:#E8F5EC;
+  --code-bg:#EDF0F5;
+  --maxw:860px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131A23;
+    --surface:#1B242F;
+    --surface-2:#222D3A;
+    --ink:#E4E9EF;
+    --ink-2:#B6C1CE;
+    --ink-3:#8593A3;
+    --rule:#2C3846;
+    --rule-2:#3D4C5C;
+    --accent:#7DA2FF;
+    --accent-soft:#1E2B45;
+    --warn:#F0A64A;
+    --warn-soft:#2E2415;
+    --good:#5DD48F;
+    --good-soft:#15291D;
+    --code-bg:#141C25;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131A23;
+  --surface:#1B242F;
+  --surface-2:#222D3A;
+  --ink:#E4E9EF;
+  --ink-2:#B6C1CE;
+  --ink-3:#8593A3;
+  --rule:#2C3846;
+  --rule-2:#3D4C5C;
+  --accent:#7DA2FF;
+  --accent-soft:#1E2B45;
+  --warn:#F0A64A;
+  --warn-soft:#2E2415;
+  --good:#5DD48F;
+  --good-soft:#15291D;
+  --code-bg:#141C25;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Sans 3",system-ui,-apple-system,sans-serif;
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+h1,h2,h3,h4{font-family:"Archivo",system-ui,sans-serif;margin:0;text-wrap:balance;line-height:1.18}
+h1{font-size:clamp(1.9rem,5vw,2.9rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(1.35rem,3vw,1.7rem);font-weight:700;letter-spacing:-.012em}
+h3{font-size:1.05rem;font-weight:600;letter-spacing:-.005em}
+p{margin:0;max-width:70ch}
+a{color:var(--accent)}
+code,kbd{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.86em}
+:not(pre)>code{background:var(--code-bg);padding:.12em .38em;border-radius:3px;color:var(--ink)}
+
+header{border-bottom:1px solid var(--rule);background:var(--surface)}
+.head-in{display:flex;flex-direction:column;gap:12px;padding:44px 0 36px}
+.eyebrow{font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.sub{font-size:1.06rem;color:var(--ink-2);max-width:62ch}
+
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.toc a{
+  font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;text-decoration:none;
+  color:var(--ink-2);border:1px solid var(--rule-2);padding:6px 11px;border-radius:4px;background:var(--paper);
+}
+.toc a:hover{border-color:var(--accent);color:var(--accent)}
+
+main{padding:8px 0 64px}
+.part{padding:40px 0 8px;border-bottom:1px solid var(--rule)}
+.part:last-of-type{border-bottom:0}
+.part-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.part-num{
+  font-family:"JetBrains Mono",monospace;font-size:.8rem;font-weight:600;
+  color:var(--accent);background:var(--accent-soft);padding:4px 8px;border-radius:4px;flex:none;
+}
+.part-intro{color:var(--ink-2);margin:14px 0 6px}
+
+/* steps — plain, numbered, no card. the number is the structure. */
+.steps{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:26px;counter-reset:s}
+.steps>li{position:relative;padding-left:44px;counter-increment:s}
+.steps>li::before{
+  content:counter(s);position:absolute;left:0;top:1px;
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font-family:"JetBrains Mono",monospace;font-size:.78rem;font-weight:600;
+  color:var(--ink-2);background:var(--surface-2);border:1px solid var(--rule-2);
+}
+.steps h3{margin-bottom:6px}
+.steps p{color:var(--ink-2)}
+.steps p+p,.steps p+.tablewrap,.steps p+pre,.steps h3+p{margin-top:8px}
+
+pre{
+  margin:10px 0 0;background:var(--code-bg);border:1px solid var(--rule);border-radius:5px;
+  padding:12px 14px;overflow-x:auto;font-family:"JetBrains Mono",monospace;font-size:.82rem;
+  line-height:1.6;color:var(--ink);
+}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:5px;margin-top:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.87rem}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  font-family:"Archivo",sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);background:var(--surface-2);
+}
+tbody tr:last-child td{border-bottom:0}
+td code{white-space:nowrap}
+td:first-child{font-weight:600;color:var(--ink)}
+.num{font-variant-numeric:tabular-nums}
+
+/* the two treatments that carry state: a trap, and a checkpoint */
+.trap,.check{
+  margin-top:14px;padding:12px 15px;border-left:3px solid;border-radius:0 4px 4px 0;
+  font-size:.92rem;line-height:1.58;
+}
+.trap{border-color:var(--warn);background:var(--warn-soft);color:var(--ink-2)}
+.check{border-color:var(--good);background:var(--good-soft);color:var(--ink-2)}
+.trap b,.check b{
+  display:block;font-family:"Archivo",sans-serif;font-size:.68rem;font-weight:600;
+  letter-spacing:.11em;text-transform:uppercase;margin-bottom:4px;
+}
+.trap b{color:var(--warn)}
+.check b{color:var(--good)}
+.trap p,.check p{max-width:66ch}
+.trap p+p,.check p+p{margin-top:6px}
+
+.blocked{
+  margin:22px 0 0;padding:16px 18px;border:1px dashed var(--rule-2);border-radius:5px;background:var(--surface);
+}
+.blocked h3{margin-bottom:8px}
+.blocked ol{margin:8px 0 0;padding-left:20px;color:var(--ink-2);font-size:.94rem}
+.blocked li{margin-bottom:5px}
+.note-after{margin-top:18px;color:var(--ink-2)}
+
+footer{border-top:1px solid var(--rule);padding:28px 0 48px;color:var(--ink-3);font-size:.85rem;background:var(--surface)}
+footer p{max-width:70ch}
+footer a{color:var(--accent)}
+</style>
+
+<header>
+  <div class="wrap head-in">
+    <p class="eyebrow">ChantSolutions &middot; deployment</p>
+    <h1>Two Domains, One Afternoon</h1>
+    <p class="sub">Getting the portfolio onto <code>chantsolutions.com</code> and Sipra onto <code>getsipra.app</code>. Part one you can do today &mdash; the code exists. Part two needs three pages written first.</p>
+    <nav class="toc" aria-label="Sections">
+      <a href="#part1">Part 1 &middot; chantsolutions.com</a>
+      <a href="#part2">Part 2 &middot; getsipra.app</a>
+      <a href="#appstore">App Store URLs</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="part" id="part1">
+  <div class="wrap">
+    <div class="part-head">
+      <span class="part-num">Part 1</span>
+      <h2>chantsolutions.com</h2>
+    </div>
+    <p class="part-intro">The portfolio is a Node server with a SQLite database, so it needs a host that runs a real process and gives you a disk that survives deploys. Render fits and is the shortest path. Railway or Fly work the same way if you prefer them.</p>
+
+    <ol class="steps">
+      <li>
+        <h3>Push the project to GitHub</h3>
+        <p>From the unzipped folder. The <code>.gitignore</code> already excludes <code>data/</code> and <code>node_modules/</code>, so no database or secret goes up.</p>
+<pre>git init
+git add .
+git commit -m "ChantSolutions portfolio"
+git branch -M main
+git remote add origin https://github.com/&lt;you&gt;/chantsolutions.git
+git push -u origin main</pre>
+      </li>
+
+      <li>
+        <h3>Check it runs locally before anything else</h3>
+        <p>From the unzipped folder. If it works here it will work on Render, and you will have found any problem while it is still cheap to fix.</p>
+<pre>node build.js
+node server.js     # open http://localhost:3000, then Ctrl+C</pre>
+      </li>
+
+      <li>
+        <h3>Create everything from the Blueprint</h3>
+        <p>The repo ships a <code>render.yaml</code>. In Render choose <b>New &rarr; Blueprint</b>, point it at the repo, and Apply. That one file creates the web service, mounts the persistent disk at <code>/data</code>, and sets every environment variable &mdash; so there is nothing to remember and nothing to mistype.</p>
+        <p>Render will prompt you for exactly one value: <code>ADMIN_EMAIL</code>. Use the address you want the Moderator badge on.</p>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th scope="col">Set for you by the Blueprint</th><th scope="col">Value</th></tr></thead>
+            <tbody>
+              <tr><td>Disk</td><td>1&nbsp;GB mounted at <code>/data</code></td></tr>
+              <tr><td>DB_PATH</td><td><code>/data/portfolio.db</code></td></tr>
+              <tr><td>TRUST_PROXY</td><td><code>1</code> &mdash; Secure cookies, HSTS, real client address</td></tr>
+              <tr><td>SESSION_SECRET</td><td>generated by Render and kept</td></tr>
+              <tr><td>NODE_VERSION</td><td><code>22</code> &mdash; <code>node:sqlite</code> is built in from 22</td></tr>
+              <tr><td>Health check</td><td><code>/api/health</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="trap">
+          <b>Why the Blueprint, and not the dashboard</b>
+          <p>Two of the settings are load-bearing and easy to miss by hand. Without the disk, every deploy silently wipes the guestbook &mdash; every account, note and reaction, no error, site still loading. And a <code>SESSION_SECRET</code> added <i>after</i> launch signs everyone out the moment you set it. Letting the file do it removes both.</p>
+          <p>Render's free plan has no persistent disk, so the plan is set to <code>starter</code>. If you downgrade later, you lose the database.</p>
+        </div>
+      </li>
+
+      <li>
+        <h3>Deploy and check the temporary address</h3>
+        <p>Render gives you something like <code>chantsolutions.onrender.com</code>. Open it and confirm the page loads, the Library and Privacy tabs work, and you can create an account. Fix anything broken here, before DNS is involved.</p>
+      </li>
+
+      <li>
+        <h3>Add the custom domain in Render</h3>
+        <p>Service &rarr; <b>Settings</b> &rarr; <b>Custom Domains</b>. Add both <code>chantsolutions.com</code> and <code>www.chantsolutions.com</code>. Render then shows you the exact DNS values to use &mdash; use the ones it shows you, not the examples below.</p>
+      </li>
+
+      <li>
+        <h3>Add the DNS records at your registrar</h3>
+        <p>Wherever you bought the domain, in its DNS settings:</p>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th scope="col">Type</th><th scope="col">Host</th><th scope="col">Points to</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td><code>@</code></td><td>the IP address Render displays</td></tr>
+              <tr><td>CNAME</td><td><code>www</code></td><td><code>chantsolutions.onrender.com</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Delete any existing A, AAAA or CNAME on those hosts first &mdash; a leftover parking record from the registrar will quietly win. Some registrars call the apex record <b>ALIAS</b> or <b>ANAME</b> instead of A; either is fine.</p>
+      </li>
+
+      <li>
+        <h3>Wait for the certificate</h3>
+        <p>Render verifies the records and issues SSL automatically. Usually minutes, occasionally an hour. Until it finishes you may see a certificate warning &mdash; that is expected, not a mistake you made.</p>
+      </li>
+
+      <li>
+        <h3>Claim your moderator account</h3>
+        <p>Once the domain is live, sign up on the guestbook using the address you set as <code>ADMIN_EMAIL</code>. That is what grants the Moderator badge and the ability to delete anyone's note. There is no other way to get it, and no password reset if you lose it.</p>
+        <div class="check">
+          <b>Before you tell anyone about it</b>
+          <p>Sign in, post a note, react to it, then open your account panel and download your data export. If the file comes back with your account in it, the whole stack is working &mdash; server, disk, sessions, and the privacy controls all at once.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="part" id="part2">
+  <div class="wrap">
+    <div class="part-head">
+      <span class="part-num">Part 2</span>
+      <h2>getsipra.app</h2>
+    </div>
+    <p class="part-intro">Different problem. There is no Sipra website yet, so there is nothing to point the domain at. The app stores need three specific pages, and two of them are mandatory &mdash; Apple and Google will both reject a submission without a working privacy policy URL.</p>
+
+    <div class="blocked">
+      <h3>What has to exist before the domain matters</h3>
+      <ol>
+        <li><b>A privacy policy page.</b> Required by Apple and Google. Must describe what Sipra actually collects &mdash; Google sign-in, Firebase, and whatever the Cloud Function sends to the AI provider.</li>
+        <li><b>A support page.</b> Required by Apple. Needs a real, monitored way to reach you.</li>
+        <li><b>A landing page.</b> Optional for the stores, but it is what the domain is for.</li>
+      </ol>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <h3>Host it on Firebase, since Sipra already lives there</h3>
+        <p>You are already paying the Firebase tax for Sipra's backend, so hosting the site there costs nothing extra, needs no second account, and includes SSL. From a new folder:</p>
+<pre>npm install -g firebase-tools
+firebase login
+firebase init hosting
+firebase deploy --only hosting</pre>
+        <p>Pick the existing Sipra project when it asks. Use <code>public</code> as the directory, and answer <b>no</b> to the single-page-app rewrite so <code>/privacy</code> and <code>/support</code> stay real URLs.</p>
+      </li>
+
+      <li>
+        <h3>Add the domain in the Firebase console</h3>
+        <p><b>Hosting &rarr; Add custom domain</b>. Enter <code>getsipra.app</code>. Firebase gives you a TXT record to prove you own it, then A records to point at it.</p>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th scope="col">Type</th><th scope="col">Host</th><th scope="col">Points to</th></tr></thead>
+            <tbody>
+              <tr><td>TXT</td><td><code>@</code></td><td>the verification string Firebase shows</td></tr>
+              <tr><td>A</td><td><code>@</code></td><td>both IPs Firebase lists</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Leave the TXT record in place permanently. Removing it after verification can un-verify the domain later.</p>
+      </li>
+
+      <li>
+        <h3>Expect it to look broken until SSL finishes</h3>
+        <div class="trap">
+          <b>.app domains cannot fall back to HTTP</b>
+          <p>Google runs the <code>.app</code> registry and put the whole TLD on the browser HSTS preload list. Every major browser refuses plain HTTP on any <code>.app</code> address, permanently, with no click-through warning.</p>
+          <p>So between pointing DNS and the certificate being issued, <code>getsipra.app</code> will look completely dead rather than merely insecure. That is the TLD working as designed. Firebase says allow up to 24 hours; it is usually a few. Do not start re-pointing DNS in the meantime.</p>
+        </div>
+      </li>
+
+      <li>
+        <h3>Add in-app account deletion before you submit</h3>
+        <p>Sipra offers Google sign-in, which creates accounts, and Apple requires any app that creates accounts to let people delete them from inside the app. A link to email you does not satisfy it. This is a common rejection reason and it is easier to build before submission than during review.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="part" id="appstore">
+  <div class="wrap">
+    <div class="part-head">
+      <span class="part-num">Then</span>
+      <h2>The three URLs the stores ask for</h2>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th scope="col">Field</th><th scope="col">Required?</th><th scope="col">URL</th></tr></thead>
+        <tbody>
+          <tr><td>Privacy Policy URL</td><td>Apple &amp; Google</td><td><code>https://getsipra.app/privacy</code></td></tr>
+          <tr><td>Support URL</td><td>Apple</td><td><code>https://getsipra.app/support</code></td></tr>
+          <tr><td>Marketing URL</td><td>Optional</td><td><code>https://getsipra.app</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="trap">
+      <b>Do not reuse the portfolio's privacy page</b>
+      <p>The page at <code>chantsolutions.com/#/privacy</code> describes the guestbook: an email, a display name, a password hash, a session, a security log. Sipra collects something different &mdash; Google sign-in, Firebase, and drill content passing through a Cloud Function to an AI provider.</p>
+      <p>Submitting the wrong one is a rejection risk, and more importantly it is an inaccurate public statement about how you handle someone's data. Sipra needs its own.</p>
+    </div>
+    <p class="note-after">Google Play also wants that same privacy link inside the app itself, not only in the Play Console listing. And the page must stay publicly reachable with no login, not a PDF, and not blocked by region.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Written 3 September 2026 for ChantSolutions. Dashboard layouts move around; the DNS record types, the environment variables and the two traps do not. Where a screen disagrees with this page, trust the screen &mdash; except on the persistent disk, which is worth arguing about.</p>
+  </div>
+</footer>

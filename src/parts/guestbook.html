@@ -1,0 +1,172 @@
+<section class="gb" id="guestbook">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Guestbook</p>
+      <h2>Say something</h2>
+      <div class="span-rule" role="presentation"><i></i></div>
+    </div>
+
+    <div class="gb-grid">
+      <div class="gb-side">
+
+        <!-- ============ signed out ============ -->
+        <div class="gb-form" id="authcard" hidden>
+          <div class="tabs" role="tablist" aria-label="Sign in or create an account">
+            <button type="button" class="tab" id="tab-signin" role="tab" aria-selected="true" aria-controls="signin">Sign in</button>
+            <button type="button" class="tab" id="tab-signup" role="tab" aria-selected="false" aria-controls="signup">Create account</button>
+          </div>
+
+          <form id="signin" role="tabpanel" aria-labelledby="tab-signin" novalidate>
+            <div class="field">
+              <label for="si-email">Email</label>
+              <input id="si-email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+            </div>
+            <div class="field">
+              <label for="si-pw">Password</label>
+              <input id="si-pw" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <div class="msg err" id="si-err" hidden role="alert"></div>
+            <button class="btn btn-primary btn-block" type="submit" id="si-submit">Sign in</button>
+          </form>
+
+          <form id="signup" role="tabpanel" aria-labelledby="tab-signup" novalidate hidden>
+            <div class="field">
+              <label for="su-name">Display name</label>
+              <input id="su-name" name="displayName" type="text" maxlength="60" autocomplete="nickname" required>
+              <p class="hint">Shown publicly beside your notes. A first name is plenty.</p>
+            </div>
+            <div class="field">
+              <label for="su-email">Email</label>
+              <input id="su-email" name="email" type="email" autocomplete="email" spellcheck="false" required>
+              <p class="hint">Never shown to anyone else. Used only to sign you in.</p>
+            </div>
+            <div class="field">
+              <label for="su-pw">Password</label>
+              <input id="su-pw" name="password" type="password" autocomplete="new-password" required>
+              <p class="hint">At least 12 characters. A short phrase you&rsquo;ll remember beats a jumble of symbols.</p>
+            </div>
+            <label class="check" for="su-consent">
+              <input type="checkbox" id="su-consent" name="consent">
+              <span>I&rsquo;ve read <a href="#/privacy" data-nav>how my data is handled</a> and I understand my display name and notes are shown publicly.</span>
+            </label>
+            <div class="msg err" id="su-err" hidden role="alert"></div>
+            <button class="btn btn-primary btn-block" type="submit" id="su-submit">Create account</button>
+          </form>
+
+          <p class="formnote">
+            Three things are stored: your email, your display name, and a scrambled form of your password.
+            No analytics, no trackers, and no IP address kept against anything you write.
+          </p>
+        </div>
+
+        <!-- ============ signed in ============ -->
+        <div class="gb-form" id="postcard" hidden>
+          <div class="whoami">
+            <span class="who-name" id="who-name"></span>
+            <span class="who-badge" id="who-admin" hidden>Moderator</span>
+          </div>
+
+          <form id="cform" novalidate>
+            <div class="field">
+              <label for="cbody">Your note</label>
+              <textarea id="cbody" name="body" maxlength="2000" placeholder="A question, a hello, or something you&rsquo;d want built." required></textarea>
+              <div class="counter" id="ccount">0 / 2000</div>
+            </div>
+            <div class="msg err" id="cerr" hidden role="alert"></div>
+            <div class="msg ok" id="cok" hidden role="status"></div>
+            <button class="btn btn-primary btn-block" id="csubmit" type="submit">Post note</button>
+          </form>
+
+          <div class="acct">
+            <button type="button" class="linkbtn" id="acct-toggle" aria-expanded="false" aria-controls="acct-panel">
+              Your account &amp; your data
+            </button>
+
+            <div id="acct-panel" hidden>
+              <p class="acct-meta" id="acct-meta"></p>
+
+              <form id="rename" novalidate>
+                <div class="field">
+                  <label for="rn-name">Display name</label>
+                  <input id="rn-name" name="displayName" type="text" maxlength="60" required>
+                </div>
+                <button class="btn btn-ghost btn-block btn-sm" type="submit" id="rn-submit">Save name</button>
+              </form>
+
+              <form id="repw" novalidate>
+                <div class="field">
+                  <label for="pw-current">Current password</label>
+                  <input id="pw-current" name="currentPassword" type="password" autocomplete="current-password" required>
+                </div>
+                <div class="field">
+                  <label for="pw-new">New password</label>
+                  <input id="pw-new" name="newPassword" type="password" autocomplete="new-password" required>
+                </div>
+                <button class="btn btn-ghost btn-block btn-sm" type="submit" id="pw-submit">Change password</button>
+                <p class="hint">Changing your password signs you out everywhere else.</p>
+              </form>
+
+              <div class="msg err" id="acct-err" hidden role="alert"></div>
+              <div class="msg ok" id="acct-ok" hidden role="status"></div>
+
+              <div class="acct-actions">
+                <a class="btn btn-ghost btn-block btn-sm" id="export-link" href="/api/me/export">Download everything I hold about you</a>
+                <button type="button" class="btn btn-ghost btn-block btn-sm" id="signout">Sign out</button>
+                <button type="button" class="btn btn-ghost btn-block btn-sm" id="signout-all">Sign out on every device</button>
+              </div>
+
+              <div class="danger">
+                <p class="danger-head">Delete your account</p>
+                <p class="hint">This removes your account, your sessions, and your reactions, permanently and immediately. Choose what happens to your notes.</p>
+                <form id="delacct" novalidate>
+                  <div class="field">
+                    <label for="del-pw">Confirm with your password</label>
+                    <input id="del-pw" name="password" type="password" autocomplete="current-password" required>
+                  </div>
+                  <fieldset class="radios">
+                    <legend>Your notes</legend>
+                    <label class="check" for="del-comments"><input type="radio" id="del-comments" name="delmode" value="delete" checked><span>Delete them too</span></label>
+                    <label class="check" for="del-keep"><input type="radio" id="del-keep" name="delmode" value="keep"><span>Leave them, with my name removed</span></label>
+                  </fieldset>
+                  <div class="msg err" id="del-err" hidden role="alert"></div>
+                  <button class="btn btn-danger btn-block btn-sm" type="submit" id="del-submit">Permanently delete my account</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ preview mode (no server) ============ -->
+        <div class="gb-form" id="previewcard" hidden>
+          <form id="pform" novalidate>
+            <div class="field">
+              <label for="pname">Your name</label>
+              <input id="pname" name="name" type="text" maxlength="60" autocomplete="name" placeholder="Who&rsquo;s writing?" required>
+            </div>
+            <div class="field">
+              <label for="pbody">Your note</label>
+              <textarea id="pbody" name="body" maxlength="2000" placeholder="A question, a hello, or something you&rsquo;d want built." required></textarea>
+              <div class="counter" id="pcount">0 / 2000</div>
+            </div>
+            <div class="msg err" id="perr" hidden role="alert"></div>
+            <div class="msg ok" id="pok" hidden role="status"></div>
+            <button class="btn btn-primary btn-block" id="psubmit" type="submit">Post note</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="gb-list-wrap">
+        <div class="gb-toolbar">
+          <p class="eyebrow">Notes</p>
+          <span class="n" id="ccount-total"></span>
+        </div>
+        <div class="gb-list" id="clist" aria-live="polite" aria-busy="true">
+          <div class="skeleton"></div>
+          <div class="skeleton skeleton-sm"></div>
+        </div>
+        <p class="offline" id="coffline" hidden></p>
+      </div>
+    </div>
+  </div>
+</section>
