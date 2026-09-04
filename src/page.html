@@ -148,18 +148,32 @@ a{color:inherit}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(48px,8vw,92px) 0 clamp(40px,6vw,64px)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:clamp(28px,5vw,64px);align-items:center}
-@media (max-width:760px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:30px}}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,501px);gap:clamp(28px,4vw,48px);align-items:center}
+/* Stack below 1080px. A 501px portrait plus a readable text column needs the
+   full 1080 layout; between 760 and 1080 the two-column hero squeezed the text
+   to 188px and broke the surname across five lines. */
+@media (max-width:1080px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:30px}}
 .portrait{
-  width:232px;height:232px;border-radius:50%;object-fit:cover;object-position:50% 50%;
-  border:1px solid var(--rule-strong);
+  /* height:auto is load-bearing — the width/height attributes on the <img>
+     are presentational hints, and without this the 501px height hint beats
+     aspect-ratio and the arch stretches on a narrow screen.
+     The 44vw cap keeps the portrait from eating the text column between the
+     stack point and a full desktop; at 1139px and up it is a flat 501. */
+  width:100%;max-width:min(501px,44vw);height:auto;aspect-ratio:1;
+  border-radius:50%;
+  object-fit:cover;object-position:50% 50%;
+  border:5px solid #4C5C50;
   box-shadow:var(--shadow);
   background:var(--surface-2);
   justify-self:end;
 }
-@media (max-width:760px){.portrait{width:150px;height:150px;justify-self:start;order:-1}}
+@media (max-width:1080px){.portrait{max-width:min(501px,72vw);justify-self:start;order:-1}}
 .hero-eyebrow{margin-bottom:14px;color:var(--accent)}
-.hero h1{margin-bottom:.24em}
+/* The 501px portrait leaves the text column 483px wide, and "Chanthaphaychith"
+   is 472px at 3.8rem. Above that it breaks mid-surname, which is worse than a
+   slightly smaller name. Measured with the web font and with the Georgia
+   fallback — both fit here. */
+.hero h1{margin-bottom:.24em;font-size:clamp(2.1rem,7.2vw,3.8rem)}
 .roleline{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;
   font-size:.95rem;font-weight:700;color:var(--ink-2);margin-bottom:20px;
@@ -530,7 +544,7 @@ footer{padding:44px 0 56px}
             <a class="btn btn-ghost" href="#guestbook" data-jump>Leave a note</a>
           </div>
         </div>
-        <img class="portrait" id="portrait" alt="Portrait of Siprachanh Chanthaphaychith" src="PORTRAIT_SRC" width="232" height="232">
+        <img class="portrait" id="portrait" alt="Portrait of Siprachanh Chanthaphaychith" src="PORTRAIT_SRC" width="501" height="501">
       </div>
     </div>
   </div>
