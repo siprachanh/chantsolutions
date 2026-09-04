@@ -71,10 +71,15 @@
 
   function applyHash(instant) {
     var raw = String(location.hash || "");
-    if (raw === "#guestbook") {
-      var el = document.getElementById("guestbook");
-      if (el) el.scrollIntoView({ behavior: instant ? "auto" : "smooth", block: "start" });
-      return;
+    // Anything that is not a "#/route" is an in-page anchor: #guestbook on the
+    // server build, #contact on the static one. Scroll to it and leave the
+    // current view alone.
+    if (raw && raw.charAt(1) !== "/" && raw.length > 1) {
+      var anchor = document.getElementById(raw.slice(1));
+      if (anchor) {
+        anchor.scrollIntoView({ behavior: instant ? "auto" : "smooth", block: "start" });
+        return;
+      }
     }
     render(viewFromHash(raw), { instant: instant });
   }
@@ -83,10 +88,17 @@
     var jump = e.target.closest && e.target.closest("a[data-jump]");
     if (jump) {
       e.preventDefault();
-      // The guestbook only lives on Home and Library — bounce back if we're elsewhere.
-      if (!document.getElementById("guestbook").offsetParent) location.hash = "#/";
-      var el = document.getElementById(jump.getAttribute("href").slice(1));
-      if (el) setTimeout(function () { el.scrollIntoView({ behavior: "smooth", block: "start" }); }, 30);
+      // The target section only lives on Home and Library, so bounce back to
+      // Home if it is not on screen. getElementById returns null when the
+      // section is not in this build at all — reading .offsetParent off that
+      // threw, which killed the handler and left the link dead.
+      var id = String(jump.getAttribute("href") || "").slice(1);
+      var target = document.getElementById(id);
+      if (!target || !target.offsetParent) location.hash = "#/";
+      setTimeout(function () {
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 30);
       return;
     }
     var nav = e.target.closest && e.target.closest("a[data-nav]");

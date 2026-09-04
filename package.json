@@ -7,9 +7,10 @@
   "scripts": {
     "build": "node build.js",
     "start": "node build.js && node server.js",
-    "test": "node tests/api.test.js && node tests/ui.test.js",
+    "test": "node build.js && node tests/api.test.js && node tests/ui.test.js && node tests/static.test.js",
     "test:api": "node tests/api.test.js",
     "test:ui": "node tests/ui.test.js",
+    "test:static": "node build.js && node tests/static.test.js",
     "secret": "node -e \"console.log(require('crypto').randomBytes(48).toString('base64url'))\""
   },
   "devDependencies": { "playwright": "^1.49.1" }

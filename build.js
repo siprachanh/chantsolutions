@@ -14,7 +14,24 @@ const path = require("node:path");
 const crypto = require("node:crypto");
 
 const root = __dirname;
-const src = fs.readFileSync(path.join(root, "src", "page.html"), "utf8");
+let src = fs.readFileSync(path.join(root, "src", "page.html"), "utf8");
+
+/**
+ * src/parts/app.js is the authority for the page's behaviour. page.html carries
+ * an inlined copy so it can be opened on its own, and the two silently drifted
+ * once already — a fix landed in the part, the build kept shipping the stale
+ * copy in the page, and a dead nav link went out. Re-inline on every build so
+ * that cannot happen again.
+ */
+const appPath = path.join(root, "src", "parts", "app.js");
+if (fs.existsSync(appPath)) {
+  const app = fs.readFileSync(appPath, "utf8");
+  const before = src;
+  src = src.replace(/(<script>)[\s\S]*?(<\/script>)/, (m, open, close) => open + app + close);
+  if (src === before) console.warn("! could not inline src/parts/app.js — check page.html's <script>");
+} else {
+  console.warn("! src/parts/app.js missing — using the copy inlined in page.html");
+}
 
 let portrait = "";
 const b64Path = path.join(root, "src", "headshot.b64");
