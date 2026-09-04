@@ -153,13 +153,13 @@ a{color:inherit}
    full 1080 layout; between 760 and 1080 the two-column hero squeezed the text
    to 188px and broke the surname across five lines. */
 @media (max-width:1080px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:30px}}
+/* Plain pixel dimensions, stepped down at breakpoints. An earlier version used
+   width:100% with a vw cap and aspect-ratio; that resolves against the grid
+   track, so anything that reports a zero-width viewport (a background tab, a
+   preview pane, an older engine that skips aspect-ratio) collapses the image to
+   its 10px of border and the portrait vanishes. Fixed px cannot do that. */
 .portrait{
-  /* height:auto is load-bearing — the width/height attributes on the <img>
-     are presentational hints, and without this the 501px height hint beats
-     aspect-ratio and the arch stretches on a narrow screen.
-     The 44vw cap keeps the portrait from eating the text column between the
-     stack point and a full desktop; at 1139px and up it is a flat 501. */
-  width:100%;max-width:min(501px,44vw);height:auto;aspect-ratio:1;
+  width:501px;height:501px;
   border-radius:50%;
   object-fit:cover;object-position:50% 50%;
   border:5px solid #4C5C50;
@@ -167,7 +167,9 @@ a{color:inherit}
   background:var(--surface-2);
   justify-self:end;
 }
-@media (max-width:1080px){.portrait{max-width:min(501px,72vw);justify-self:start;order:-1}}
+@media (max-width:1080px){.portrait{width:420px;height:420px;justify-self:start;order:-1}}
+@media (max-width:560px){.portrait{width:300px;height:300px}}
+@media (max-width:380px){.portrait{width:240px;height:240px}}
 .hero-eyebrow{margin-bottom:14px;color:var(--accent)}
 /* The 501px portrait leaves the text column 483px wide, and "Chanthaphaychith"
    is 472px at 3.8rem. Above that it breaks mid-surname, which is worse than a
