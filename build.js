@@ -65,6 +65,37 @@ function toStatic(html) {
   out = out.replace('<a href="#guestbook" data-jump>Guestbook</a>', '<a href="#contact" data-jump>Contact</a>');
   out = out.replace('<a class="btn btn-ghost" href="#guestbook" data-jump>Leave a note</a>',
                     '<a class="btn btn-ghost" href="#contact" data-jump>Get in touch</a>');
+  /**
+   * Under 600px the server build hides the jump link, because there the only
+   * jump link is Guestbook — a shortcut the hero already offers. Here the only
+   * jump link is Contact, which is the point of the whole page, so it has to
+   * survive on a phone. Keeping it means paying for the width somewhere else:
+   * tighter link padding and letter-spacing first, and below 430px the
+   * brandmark goes, since the visitor's next glance is a name in 3rem type.
+   *
+   * These rules sit after the ones they override. Same specificity, so order
+   * is the only thing deciding the winner.
+   */
+  const HIDE_JUMP = "  .navlinks a[data-jump]{display:none}\n";
+  const BLOCK_END = "  .topbar-in{gap:8px}\n}";
+  for (const anchor of [HIDE_JUMP, BLOCK_END]) {
+    if (out.indexOf(anchor) === -1) {
+      console.warn("! nav CSS anchor missing — check the static build's mobile nav by hand");
+    }
+  }
+  out = out.replace(
+    HIDE_JUMP,
+    "  .navlinks a{padding:6px 5px;font-size:.72rem;letter-spacing:.012em}\n" +
+    "  .themebtn{margin-left:2px}\n"
+  );
+  out = out.replace(
+    BLOCK_END,
+    "  .topbar-in{gap:8px}\n}\n" +
+    "@media (max-width:430px){\n" +
+    "  .brandmark{display:none}\n" +
+    "  .topbar-in{padding:0 12px}\n" +
+    "}"
+  );
   return out;
 }
 

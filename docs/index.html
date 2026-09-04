@@ -144,8 +144,13 @@ a{color:inherit}
   .navlinks{gap:0}
   /* the Guestbook link is only a scroll shortcut, and the hero already
      offers one — drop it before the bar overflows a narrow phone */
-  .navlinks a[data-jump]{display:none}
+  .navlinks a{padding:6px 5px;font-size:.72rem;letter-spacing:.012em}
+  .themebtn{margin-left:2px}
   .topbar-in{gap:8px}
+}
+@media (max-width:430px){
+  .brandmark{display:none}
+  .topbar-in{padding:0 12px}
 }
 .themebtn{
   margin-left:6px;background:transparent;border:1px solid var(--rule);color:var(--ink-2);
