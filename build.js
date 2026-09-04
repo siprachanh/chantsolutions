@@ -26,6 +26,50 @@ if (fs.existsSync(b64Path)) {
 
 const page = src.replace("PORTRAIT_SRC", portrait);
 
+/* --------------------------------------------------- static site variant -- */
+
+/**
+ * The guestbook is the only part of this site that needs a server, and a
+ * server with a disk costs money. So we also emit a static build: the same
+ * page with the guestbook swapped for a way to actually get in touch. It
+ * hosts free anywhere — Cloudflare Pages, Firebase, Netlify, GitHub Pages —
+ * with a custom domain and SSL.
+ *
+ * Nothing is thrown away. Add the server whenever the guestbook earns its
+ * keep, and the full build is still here.
+ */
+const CONTACT = `<section class="gb" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Get in touch</p>
+      <h2>One conversation</h2>
+      <div class="span-rule" role="presentation"><i></i></div>
+    </div>
+    <p class="lede mb-28">If something here is close to what you need &mdash; a team that isn&rsquo;t landing, a business trying to use AI without understanding it, a conversation you&rsquo;re dreading &mdash; write to me. I read everything myself.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:sipra.chant@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://siprachant.gumroad.com/l/ibckmi" target="_blank" rel="noopener noreferrer">Get The Patient Paddle</a>
+    </div>
+  </div>
+</section>`;
+
+function toStatic(html) {
+  const start = html.indexOf('<section class="gb" id="guestbook">');
+  if (start === -1) {
+    console.warn("! guestbook section not found — static build is unchanged");
+    return html;
+  }
+  const end = html.indexOf("</section>", html.indexOf('id="coffline"')) + "</section>".length;
+  let out = html.slice(0, start) + CONTACT + html.slice(end);
+  // the nav link pointed at the guestbook; point it at the contact block
+  out = out.replace('<a href="#guestbook" data-jump>Guestbook</a>', '<a href="#contact" data-jump>Contact</a>');
+  out = out.replace('<a class="btn btn-ghost" href="#guestbook" data-jump>Leave a note</a>',
+                    '<a class="btn btn-ghost" href="#contact" data-jump>Get in touch</a>');
+  return out;
+}
+
+const staticPage = toStatic(page);
+
 /* ------------------------------------------------------------ CSP hashes -- */
 
 /**
@@ -74,6 +118,14 @@ fs.writeFileSync(path.join(root, "public", "index.html"), doc);
 fs.writeFileSync(path.join(root, "public", "csp.json"), JSON.stringify(csp, null, 2));
 fs.writeFileSync(path.join(root, "dist", "artifact.html"), page);
 
+// docs/ (not static/) because that is the one folder GitHub Pages will serve
+// from without any build step, CLI, or extra account.
+const staticDoc = doc.replace(page, staticPage);
+fs.mkdirSync(path.join(root, "docs"), { recursive: true });
+fs.writeFileSync(path.join(root, "docs", "index.html"), staticDoc);
+fs.writeFileSync(path.join(root, "docs", ".nojekyll"), "");
+
 console.log("built public/index.html   (%d KB)", Math.round(doc.length / 1024));
 console.log("built dist/artifact.html  (%d KB)", Math.round(page.length / 1024));
 console.log("built public/csp.json     (%d script, %d style hash)", csp.script.length, csp.style.length);
+console.log("built docs/index.html     (%d KB) — free hosting, no guestbook", Math.round(staticDoc.length / 1024));

@@ -708,6 +708,10 @@
     s.subscribe(draw);
   }
 
+  // A build without the guestbook (the static marketing site) has none of the
+  // elements below. Stop here rather than wiring up nothing.
+  if (!list) return;
+
   function probeHttp() {
     return fetch("/api/health", { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("no api")); })
