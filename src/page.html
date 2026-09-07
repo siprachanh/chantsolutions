@@ -170,12 +170,14 @@ a{color:inherit}
 @media (max-width:1080px){.portrait{width:420px;height:420px;justify-self:start;order:-1}}
 @media (max-width:560px){.portrait{width:300px;height:300px}}
 @media (max-width:380px){.portrait{width:240px;height:240px}}
-.hero-eyebrow{margin-bottom:14px;color:var(--accent)}
+/* The hero eyebrow now carries the firm's name, not a label, so it is sized to
+   be read rather than skimmed — and the name below gives up room for it. */
+.hero-eyebrow{margin-bottom:16px;color:var(--accent);font-size:.92rem;letter-spacing:.2em}
 /* The 501px portrait leaves the text column 483px wide, and "Chanthaphaychith"
    is 472px at 3.8rem. Above that it breaks mid-surname, which is worse than a
    slightly smaller name. Measured with the web font and with the Georgia
    fallback — both fit here. */
-.hero h1{margin-bottom:.24em;font-size:clamp(2.1rem,7.2vw,3.8rem)}
+.hero h1{margin-bottom:.24em;font-size:clamp(1.8rem,6vw,3.05rem)}
 .roleline{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;
   font-size:.95rem;font-weight:700;color:var(--ink-2);margin-bottom:20px;
@@ -535,12 +537,12 @@ footer{padding:44px 0 56px}
     <div class="hero">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow hero-eyebrow">ChantSolutions</p>
+          <p class="eyebrow hero-eyebrow">ChantSolutions LLC</p>
           <h1>Siprachanh<br>Chanthaphaychith</h1>
           <div class="roleline">
-            <b>Mediator</b><b>Agile coach</b><b>Bridge builder</b>
+            <b>Conflict resolution</b><b>Agile coach</b><b>Bridge builder</b>
           </div>
-          <p class="lede">English is my second language. I&rsquo;ve spent my whole life bridging the communication gap &mdash; translating for patients in hospital rooms, training law students to deliver an oral argument, coaching teams through agile transformations that actually stuck. Now that work is books, apps, and coaching.</p>
+          <p class="lede">Because English is my second language, I&rsquo;ve spent my whole life bridging the communication gap &mdash; translating for patients in hospital rooms, training law students to deliver an oral argument, coaching teams through agile transformations that actually stuck. ChantSolutions is where that work lives now: Agile coaching, team facilitation, and communication and conflict&#8209;resolution training for organizations and the people inside them &mdash; plus the apps, books, and templates that put the same method within reach of anyone who can&rsquo;t hire a consultant.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#/work" data-nav>See the work</a>
             <a class="btn btn-ghost" href="#guestbook" data-jump>Leave a note</a>
@@ -1123,11 +1125,14 @@ footer{padding:44px 0 56px}
     <div class="span-rule" role="presentation"><i></i></div>
     <div class="foot mt-26">
       <div>
-        <p><strong class="foot-strong">ChantSolutions</strong> &mdash; Murfreesboro, Tennessee</p>
+        <p><strong class="foot-strong">ChantSolutions LLC</strong> &mdash; Murfreesboro, Tennessee</p>
         <p class="mt-4"><a href="mailto:sipra.chant@gmail.com">sipra.chant@gmail.com</a> &middot; <a href="#/privacy" data-nav>Privacy &amp; your data</a></p>
       </div>
-      <p>&copy; <span id="yr">2026</span> Siprachanh Chanthaphaychith</p>
+      <p>&copy; <span id="yr">2026</span> ChantSolutions LLC</p>
     </div>
+    <!-- The registered description, verbatim. App Store organization enrolment,
+         banks and registries check that the public site matches the filing. -->
+    <p class="disclaimer">ChantSolutions LLC is a management consulting and professional training entity based in Murfreesboro, Tennessee. The entity provides Agile coaching, team facilitation, and workplace communication and conflict&#8209;resolution training to organizations and individual professionals. It also develops and publishes digital training products, including mobile applications, ebooks, and downloadable templates, distributed through its own website and third&#8209;party marketplaces. The entity is owned and operated by a single member.</p>
     <p class="disclaimer">I hold a Juris Doctor but am not licensed to practice law. Everything here &mdash; the writing, the tools, the coaching &mdash; is professional coaching and facilitation, not legal advice, and no attorney&ndash;client relationship is created by using it.</p>
   </div>
 </footer>

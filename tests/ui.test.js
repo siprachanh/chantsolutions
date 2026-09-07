@@ -147,7 +147,12 @@ async function signUp(page, name) {
         declaredCounts.every((c) => c.declared === c.actual),
         JSON.stringify(declaredCounts));
 
-      ok("legal disclaimer present", (await page.locator(".disclaimer").innerText()).includes("not licensed to practice law"));
+      // Two .disclaimer blocks now — the registered entity description and the
+      // non-practising notice. Read them together rather than assuming one.
+      const disclaimers = (await page.locator(".disclaimer").allInnerTexts()).join("\n");
+      ok("legal disclaimer present", disclaimers.includes("not licensed to practice law"));
+      ok("registered entity description present",
+         /ChantSolutions LLC is a management consulting and professional training entity/.test(disclaimers));
 
       // The framework order has to match Sipra. Assert it so a future edit
       // cannot quietly put Story back in front of State.
