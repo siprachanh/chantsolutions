@@ -151,8 +151,26 @@ async function signUp(page, name) {
       // non-practising notice. Read them together rather than assuming one.
       const disclaimers = (await page.locator(".disclaimer").allInnerTexts()).join("\n");
       ok("legal disclaimer present", disclaimers.includes("not licensed to practice law"));
-      ok("registered entity description present",
-         /ChantSolutions LLC is a management consulting and professional training entity/.test(disclaimers));
+      // The registered description, as filed. Banks, registries and App Store
+      // organization enrolment check that the public site matches the filing,
+      // so this asserts the wording rather than merely that a paragraph exists.
+      ok("registered company description present",
+         /ChantSolutions LLC is a management consulting and professional training company based in Murfreesboro, Tennessee/
+           .test(disclaimers));
+      ok("registered description states single-member ownership",
+         /The company is owned and operated by a single member/.test(disclaimers));
+      ok("registered description names the product lines",
+         /mobile applications, ebooks, and downloadable templates/.test(disclaimers));
+      ok("no stale 'entity' wording left in the description",
+         !/professional training entity|The entity provides|The entity is owned/.test(disclaimers));
+
+      // The meta description is what shows in search results and link previews.
+      // It drifted once already — it still said "mediator" and "guestbook"
+      // after both had been removed from the page.
+      const metaDesc = await page.locator('meta[name="description"]').getAttribute("content");
+      ok("meta description names the company", /ChantSolutions LLC/.test(metaDesc || ""));
+      ok("meta description carries no stale terms",
+         !/mediator|guestbook/i.test(metaDesc || ""));
 
       // The framework order has to match Sipra. Assert it so a future edit
       // cannot quietly put Story back in front of State.

@@ -3,9 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Siprachanh &quot;Sippy&quot; Chanthaphaychith — mediator, Agile coach, and builder of conflict-resolution and AI tools. Portfolio, library, and guestbook.">
+<meta name="description" content="ChantSolutions LLC — Agile coaching, team facilitation, and workplace communication training for organizations, plus digital training products and mobile apps. Founded by Siprachanh &quot;Sippy&quot; Chanthaphaychith.">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ChantSolutions LLC">
+<meta property="og:title" content="Siprachanh &quot;Sippy&quot; Chanthaphaychith — ChantSolutions LLC">
+<meta property="og:description" content="Management consulting firm providing Agile coaching, team facilitation, and workplace communication training to organizations, and publishing digital training products and mobile applications.">
+<meta property="og:url" content="https://chantsolutions.com/">
+<meta name="twitter:card" content="summary">
 <title>Sippy Chanthaphaychith</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%232F3D33%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2215%22%20width%3D%2218%22%20height%3D%222%22%20rx%3D%221%22%20fill%3D%22%23E4C3B8%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CF6249%22%2F%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CF6249%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,12 +184,14 @@ a{color:inherit}
 @media (max-width:1080px){.portrait{width:420px;height:420px;justify-self:start;order:-1}}
 @media (max-width:560px){.portrait{width:300px;height:300px}}
 @media (max-width:380px){.portrait{width:240px;height:240px}}
-.hero-eyebrow{margin-bottom:14px;color:var(--accent)}
+/* The hero eyebrow now carries the firm's name, not a label, so it is sized to
+   be read rather than skimmed — and the name below gives up room for it. */
+.hero-eyebrow{margin-bottom:16px;color:var(--accent);font-size:.92rem;letter-spacing:.2em}
 /* The 501px portrait leaves the text column 483px wide, and "Chanthaphaychith"
    is 472px at 3.8rem. Above that it breaks mid-surname, which is worse than a
    slightly smaller name. Measured with the web font and with the Georgia
    fallback — both fit here. */
-.hero h1{margin-bottom:.24em;font-size:clamp(2.1rem,7.2vw,3.8rem)}
+.hero h1{margin-bottom:.24em;font-size:clamp(1.8rem,6vw,3.05rem)}
 .roleline{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;
   font-size:.95rem;font-weight:700;color:var(--ink-2);margin-bottom:20px;
@@ -543,12 +551,12 @@ footer{padding:44px 0 56px}
     <div class="hero">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow hero-eyebrow">ChantSolutions</p>
+          <p class="eyebrow hero-eyebrow">ChantSolutions LLC</p>
           <h1>Siprachanh<br>Chanthaphaychith</h1>
           <div class="roleline">
-            <b>Mediator</b><b>Agile coach</b><b>Bridge builder</b>
+            <b>Conflict resolution</b><b>Agile coach</b><b>Bridge builder</b>
           </div>
-          <p class="lede">English is my second language. I&rsquo;ve spent my whole life bridging the communication gap &mdash; translating for patients in hospital rooms, training law students to deliver an oral argument, coaching teams through agile transformations that actually stuck. Now that work is books, apps, and coaching.</p>
+          <p class="lede">Because English is my second language, I&rsquo;ve spent my whole life bridging the communication gap &mdash; translating for patients in hospital rooms, training law students to deliver an oral argument, coaching teams through agile transformations that actually stuck. ChantSolutions is where that work lives now: Agile coaching, team facilitation, and communication and conflict&#8209;resolution training for organizations and the people inside them &mdash; plus the apps, books, and templates that put the same method within reach of anyone who can&rsquo;t hire a consultant.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#/work" data-nav>See the work</a>
             <a class="btn btn-ghost" href="#guestbook" data-jump>Leave a note</a>
@@ -673,9 +681,9 @@ footer{padding:44px 0 56px}
           <div class="col-head"><span class="dot shipped"></span><h3>Built</h3><span class="count">5</span></div>
           <div class="cards">
             <article class="card">
-              <h4>Sipra &mdash; communication training app</h4>
+              <h4><a class="cardlink" href="https://getsipra.app" target="_blank" rel="noopener noreferrer">Sipra &mdash; communication training app</a></h4>
               <p>Daily drills for speaking under pressure, structured on State&ndash;Story&ndash;Strategy. Native Flutter for iOS and Android on a Firebase backend, with a Cloud Function generating the drill content. A separate React prototype carries tester feedback.</p>
-              <div class="tags"><span class="tag">App</span><span class="tag">Flutter</span><span class="tag">In testing</span></div>
+              <div class="tags"><span class="tag">App</span><span class="tag">Flutter</span><span class="tag">getsipra.app</span></div>
             </article>
             <article class="card">
               <h4><a class="cardlink" href="https://siprachant.gumroad.com/l/ibckmi" target="_blank" rel="noopener noreferrer">The Patient Paddle</a></h4>
@@ -804,7 +812,10 @@ footer{padding:44px 0 56px}
           <div class="lib-body">
             <h4>Sipra</h4>
             <p>Daily drills for speaking under pressure. Flutter, Firebase backend, Google sign&#8209;in, and AI&#8209;generated drill content behind a Cloud Function.</p>
-            <div class="lib-meta"><span class="status-pill pill-wip">In testing</span></div>
+            <div class="lib-meta">
+              <span class="status-pill pill-wip">In testing</span>
+              <a class="lib-buy" href="https://getsipra.app" target="_blank" rel="noopener noreferrer">getsipra.app &rarr;</a>
+            </div>
           </div>
         </article>
         <article class="lib-item">
@@ -1128,11 +1139,14 @@ footer{padding:44px 0 56px}
     <div class="span-rule" role="presentation"><i></i></div>
     <div class="foot mt-26">
       <div>
-        <p><strong class="foot-strong">ChantSolutions</strong> &mdash; Murfreesboro, Tennessee</p>
+        <p><strong class="foot-strong">ChantSolutions LLC</strong> &mdash; Murfreesboro, Tennessee</p>
         <p class="mt-4"><a href="mailto:sipra.chant@gmail.com">sipra.chant@gmail.com</a> &middot; <a href="#/privacy" data-nav>Privacy &amp; your data</a></p>
       </div>
-      <p>&copy; <span id="yr">2026</span> Siprachanh Chanthaphaychith</p>
+      <p>&copy; <span id="yr">2026</span> ChantSolutions LLC</p>
     </div>
+    <!-- The registered description, verbatim. App Store organization enrolment,
+         banks and registries check that the public site matches the filing. -->
+    <p class="disclaimer">ChantSolutions LLC is a management consulting and professional training company based in Murfreesboro, Tennessee. The company provides Agile coaching, team facilitation, and workplace communication and conflict&#8209;resolution training to organizations and individual professionals. It also develops and publishes digital training products, including mobile applications, ebooks, and downloadable templates, distributed through its own website and third&#8209;party marketplaces. The company is owned and operated by a single member.</p>
     <p class="disclaimer">I hold a Juris Doctor but am not licensed to practice law. Everything here &mdash; the writing, the tools, the coaching &mdash; is professional coaching and facilitation, not legal advice, and no attorney&ndash;client relationship is created by using it.</p>
   </div>
 </footer>

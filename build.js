@@ -152,9 +152,15 @@ const doc = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Siprachanh &quot;Sippy&quot; Chanthaphaychith — mediator, Agile coach, and builder of conflict-resolution and AI tools. Portfolio, library, and guestbook.">
+<meta name="description" content="ChantSolutions LLC — Agile coaching, team facilitation, and workplace communication training for organizations, plus digital training products and mobile apps. Founded by Siprachanh &quot;Sippy&quot; Chanthaphaychith.">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ChantSolutions LLC">
+<meta property="og:title" content="Siprachanh &quot;Sippy&quot; Chanthaphaychith — ChantSolutions LLC">
+<meta property="og:description" content="Management consulting firm providing Agile coaching, team facilitation, and workplace communication training to organizations, and publishing digital training products and mobile applications.">
+<meta property="og:url" content="https://chantsolutions.com/">
+<meta name="twitter:card" content="summary">
 ${page}
 </body>
 </html>
