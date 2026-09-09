@@ -172,6 +172,68 @@ async function signUp(page, name) {
       ok("meta description carries no stale terms",
          !/mediator|guestbook/i.test(metaDesc || ""));
 
+      // The career timeline is a set of factual claims about employment, and
+      // nothing asserted it until now. An employment end date that drifts is
+      // the kind of error a reader spots and Sippy doesn't.
+      const timeline = (await page.locator(".tl li").allInnerTexts()).join("\n");
+      ok("timeline lists every role", (await page.locator(".tl li").count()) === 6);
+
+      // Order matters and is easy to break with a copy-paste. Newest first,
+      // as Sippy stated it. Matched on substrings so the em-dash suffixes on
+      // some entries don't make this brittle.
+      const orgs = (await page.locator(".tl li .org").allInnerTexts()).join("\n");
+      const expectedOrder = [
+        "ChantSolutions",
+        "Booz Allen Hamilton",
+        "AllianceBernstein",
+        "Nissan North America",
+        "Nashville Conflict Resolution Center",
+        "Vanderbilt University School of Medicine",
+      ];
+      let inOrder = true;
+      for (let i = 1; i < expectedOrder.length; i++) {
+        const prev = orgs.indexOf(expectedOrder[i - 1]);
+        const cur = orgs.indexOf(expectedOrder[i]);
+        if (prev === -1 || cur === -1 || cur < prev) inOrder = false;
+      }
+      ok("timeline runs newest to oldest in the stated order", inOrder,
+         orgs.replace(/\n/g, " | "));
+
+      // Credentials are claims about qualifications actually held. PMP was
+      // listed here while the exam had not been taken — the required training
+      // was complete, the certification was not. Put it back when it is earned;
+      // until then this fails if it reappears anywhere on the page.
+      const creds = (await page.locator(".creds-label + .tags .tag").allInnerTexts())
+        .map((s) => s.trim());
+      ok("credentials listed", creds.length === 7, creds.join(" | "));
+      // Compared uppercased: .tag is text-transform:uppercase, so innerText
+      // comes back shouting. Third assertion in this file to trip on that.
+      const credsUpper = creds.map((c) => c.toUpperCase());
+      ok("credentials name the ones actually held",
+         ["JURIS DOCTOR", "TRAINED MEDIATOR", "CSM"].every((c) => credsUpper.includes(c)),
+         creds.join(" | "));
+      // PMP may appear only with its qualifier. A bare "PMP" anywhere on the
+      // page reads as a held certification, which it is not. This catches a
+      // future edit that shortens the tag or drops PMP into a bio line.
+      const bodyText = await page.locator("body").innerText();
+      ok("PMP appears only as training, never as a held credential",
+         !/\bPMP\b(?!\s+training)/i.test(bodyText), bodyText.match(/.{0,30}PMP.{0,30}/i)?.[0]);
+      ok("PMP training is qualified in the credential list",
+         credsUpper.includes("PMP TRAINING COMPLETE"), creds.join(" | "));
+      // Case-insensitive: .when is uppercased by CSS, so innerText comes back
+      // as "THROUGH APR 2026". A case-sensitive negative assertion here would
+      // have passed while missing a real regression.
+      ok("Booz Allen end date is April 2026", /Through Apr 2026/i.test(timeline));
+      ok("no stale August end date", !/Aug\.? 2026/i.test(timeline));
+      ok("Nashville Conflict Resolution Center listed",
+         /Nashville Conflict Resolution Center/.test(timeline));
+      ok("mediation types named",
+         /family, civil, and victim.offender/i.test(timeline));
+      ok("Nissan role names vendor risk management",
+         /vendor risk management/i.test(timeline));
+      ok("AllianceBernstein role names engineering and analysis",
+         /Software engineering, business analysis/i.test(timeline));
+
       // The framework order has to match Sipra. Assert it so a future edit
       // cannot quietly put Story back in front of State.
       const fwHeading = (await page.locator("#framework h2").innerText()).replace(/\s+/g, " ").trim();
