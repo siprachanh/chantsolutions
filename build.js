@@ -64,7 +64,7 @@ const CONTACT = `<section class="gb" id="contact">
     </div>
     <p class="lede mb-28">If something here is close to what you need &mdash; a team that isn&rsquo;t landing, a business trying to use AI without understanding it, a conversation you&rsquo;re dreading &mdash; write to me. I read everything myself.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:sipra.chant@gmail.com">Email me</a>
+      <a class="btn btn-primary" href="mailto:support@chantsolutions.com">Email me</a>
       <a class="btn btn-ghost" href="https://siprachant.gumroad.com/l/ibckmi" target="_blank" rel="noopener noreferrer">Get The Patient Paddle</a>
     </div>
   </div>

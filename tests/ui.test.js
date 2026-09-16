@@ -220,6 +220,15 @@ async function signUp(page, name) {
          !/\bPMP\b(?!\s+training)/i.test(bodyText), bodyText.match(/.{0,30}PMP.{0,30}/i)?.[0]);
       ok("PMP training is qualified in the credential list",
          credsUpper.includes("PMP TRAINING COMPLETE"), creds.join(" | "));
+
+      // Contact is support@chantsolutions.com, not a personal gmail. Checked
+      // against the HTML rather than the visible text so a mailto: href with
+      // different link text cannot slip past.
+      const html = await page.content();
+      ok("no personal email address anywhere on the page",
+         !/@gmail\.com|@googlemail\.com/i.test(html));
+      ok("contact address is support@chantsolutions.com",
+         /support@chantsolutions\.com/.test(html));
       // Case-insensitive: .when is uppercased by CSS, so innerText comes back
       // as "THROUGH APR 2026". A case-sensitive negative assertion here would
       // have passed while missing a real regression.

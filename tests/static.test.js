@@ -143,7 +143,13 @@ async function settle(page) {
     const page = await newPage(browser, 1280, 900);
     await page.goto(PAGE, { waitUntil: "load" });
     const mail = await page.getAttribute('#contact a[href^="mailto:"]', "href");
-    ok("an email link", mail === "mailto:sipra.chant@gmail.com");
+    ok("an email link", mail === "mailto:support@chantsolutions.com");
+    // The site used a personal gmail address until 2026-09-16. It appeared in
+    // five places across four files, and the one spotted by eye was the footer.
+    // This fails if any personal address returns anywhere on the page.
+    const html = await page.content();
+    ok("no personal email address anywhere on the page",
+       !/@gmail\.com|@googlemail\.com/i.test(html));
     const buy = await page.$('#contact a[href*="gumroad.com"]');
     ok("a link to The Patient Paddle", buy !== null);
     ok("that link is safe to open in a new tab",
