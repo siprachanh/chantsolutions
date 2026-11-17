@@ -1,71 +1,86 @@
-<title>Sippy Chanthaphaychith</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%232F3D33%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2215%22%20width%3D%2218%22%20height%3D%222%22%20rx%3D%221%22%20fill%3D%22%23E4C3B8%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CF6249%22%2F%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CF6249%22%2F%3E%3C%2Fsvg%3E">
+<title>Sippy Chanthaphaychith · AI adoption consulting · ChantSolutions</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%234A1D6E%22%2F%3E%3Crect%20x%3D%227%22%20y%3D%2215%22%20width%3D%2218%22%20height%3D%222%22%20rx%3D%221%22%20fill%3D%22%23E4C3B8%22%2F%3E%3Ccircle%20cx%3D%227%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CC5500%22%2F%3E%3Ccircle%20cx%3D%2225%22%20cy%3D%2216%22%20r%3D%223.4%22%20fill%3D%22%23CC5500%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap">
 <style>
 /* ---------- tokens: light (bare :root = complete palette) ---------- */
 :root{
-  --cream:#F4ECDD;
-  --forest:#2F3D33;
-  --coral:#CF6249;
+  --cream:#F6EEE3;
+  --forest:#2A1B3D;
+  --coral:#CC5A1E;
+  --burnt:#CC5500;
+  --plum:#4A1D6E;
+  --plum-2:#5E2A8A;
   --sage:#8FA08A;
   --ochre:#C9922F;
   --blush:#E4C3B8;
 
-  --bg:#F4ECDD;
-  --bg-2:#EFE5D3;
-  --surface:#FBF6EC;
-  --surface-2:#F2E9D9;
-  --ink:#2F3D33;
-  --ink-2:#4E5C51;
-  --ink-3:#77836F;
-  --rule:#DCD0BB;
-  --rule-strong:#C4B69E;
-  --accent:#B8503A;
-  --accent-ink:#FBF6EC;
+  --bg:#F6EEE3;
+  --bg-2:#F1E5D6;
+  --surface:#FCF7F0;
+  --surface-2:#F3E8DA;
+  --ink:#24172F;
+  --ink-2:#4A3B55;
+  --ink-3:#76687F;
+  --rule:#E0D2C2;
+  --rule-strong:#C9B5A2;
+  --accent:#B34A0F;
+  --accent-ink:#FFF8F1;
   --sage-ink:#5E7059;
-  --ochre-ink:#8A6216;
-  --focus:#B8503A;
-  --shadow:0 1px 2px rgba(47,61,51,.06), 0 8px 24px -12px rgba(47,61,51,.18);
+  --ochre-ink:#8A5A10;
+  --focus:#B34A0F;
+  --purple:#4A1D6E;
+  --purple-ink:#FBF5FF;
+  --purple-soft:#EDE3F4;
+  --orange-band:#C2541A;
+  --shadow:0 1px 2px rgba(42,27,61,.07), 0 10px 28px -12px rgba(42,27,61,.22);
   --radius:3px;
   --maxw:1080px;
   --prose:66ch;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#1E2721;
-    --bg-2:#243029;
-    --surface:#27332B;
-    --surface-2:#2E3B32;
-    --ink:#EDE4D4;
-    --ink-2:#C3CBBE;
-    --ink-3:#93A08E;
-    --rule:#3A483E;
-    --rule-strong:#4C5C50;
-    --accent:#E8836B;
-    --accent-ink:#1E2721;
+    --bg:#1A1222;
+    --bg-2:#21172B;
+    --surface:#271C33;
+    --surface-2:#30233E;
+    --ink:#F3EADF;
+    --ink-2:#D2C6D8;
+    --ink-3:#A495AE;
+    --rule:#3B2D49;
+    --rule-strong:#54426A;
+    --accent:#F08C4F;
+    --accent-ink:#1A1222;
     --sage-ink:#A9BCA3;
     --ochre-ink:#DDAE55;
-    --focus:#E8836B;
+    --focus:#F08C4F;
+    --purple:#3A1658;
+    --purple-ink:#F6EEFF;
+    --purple-soft:#2C1F3B;
+    --orange-band:#B3501A;
     --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
   }
 }
 :root[data-theme="dark"]{
-  --bg:#1E2721;
-  --bg-2:#243029;
-  --surface:#27332B;
-  --surface-2:#2E3B32;
-  --ink:#EDE4D4;
-  --ink-2:#C3CBBE;
-  --ink-3:#93A08E;
-  --rule:#3A483E;
-  --rule-strong:#4C5C50;
-  --accent:#E8836B;
-  --accent-ink:#1E2721;
+  --bg:#1A1222;
+  --bg-2:#21172B;
+  --surface:#271C33;
+  --surface-2:#30233E;
+  --ink:#F3EADF;
+  --ink-2:#D2C6D8;
+  --ink-3:#A495AE;
+  --rule:#3B2D49;
+  --rule-strong:#54426A;
+  --accent:#F08C4F;
+  --accent-ink:#1A1222;
   --sage-ink:#A9BCA3;
   --ochre-ink:#DDAE55;
-  --focus:#E8836B;
+  --focus:#F08C4F;
+  --purple:#3A1658;
+  --purple-ink:#F6EEFF;
+  --purple-soft:#2C1F3B;
+  --orange-band:#B3501A;
   --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 30px -14px rgba(0,0,0,.6);
 }
 
@@ -162,10 +177,11 @@ a{color:inherit}
   width:501px;height:501px;
   border-radius:50%;
   object-fit:cover;object-position:50% 50%;
-  border:5px solid #4C5C50;
-  box-shadow:var(--shadow);
+  border:6px solid var(--plum);
+  box-shadow:0 0 0 6px color-mix(in srgb, var(--burnt) 22%, transparent), var(--shadow);
   background:var(--surface-2);
   justify-self:end;
+  object-position:50% 40%;
 }
 @media (max-width:1080px){.portrait{width:420px;height:420px;justify-self:start;order:-1}}
 @media (max-width:560px){.portrait{width:300px;height:300px}}
@@ -177,7 +193,9 @@ a{color:inherit}
    is 472px at 3.8rem. Above that it breaks mid-surname, which is worse than a
    slightly smaller name. Measured with the web font and with the Georgia
    fallback — both fit here. */
-.hero h1{margin-bottom:.24em;font-size:clamp(1.8rem,6vw,3.05rem)}
+.hero h1{margin-bottom:.3em;font-size:clamp(2.1rem,5.4vw,3.4rem);line-height:1.04}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-name{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:6px}
 .roleline{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;
   font-size:.95rem;font-weight:700;color:var(--ink-2);margin-bottom:20px;
@@ -254,7 +272,7 @@ section{padding:clamp(44px,6vw,72px) 0}
 .fw-step p{font-size:.9rem;color:var(--ink-2);line-height:1.55}
 
 /* work board */
-.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:start}
+.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
 @media (max-width:900px){.board{grid-template-columns:minmax(0,1fr)}}
 .col-head{display:flex;align-items:center;gap:9px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--rule)}
 .dot{width:8px;height:8px;border-radius:50%;flex:none}
@@ -507,6 +525,57 @@ footer{padding:44px 0 56px}
   border-left:2px solid var(--accent);max-width:none;
 }
 
+/* ---------- consulting: proof strip, offers, steps, CTA band ---------- */
+.proof{background:var(--purple);color:var(--purple-ink);border-radius:var(--radius);padding:26px clamp(18px,3vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 28px}
+.proof div{border-left:3px solid var(--burnt);padding-left:14px}
+.proof b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.55rem;font-weight:700;line-height:1.1;color:#FFB27A;margin-bottom:4px}
+.proof span{font-size:.86rem;line-height:1.45;color:color-mix(in srgb, var(--purple-ink) 86%, transparent)}
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:6px}
+@media (max-width:860px){.offers{grid-template-columns:minmax(0,1fr)}}
+.offer{background:var(--surface);border:1px solid var(--rule);border-top:5px solid var(--accent);border-radius:var(--radius);padding:22px 20px;display:flex;flex-direction:column;gap:10px;position:relative}
+.offer.featured{border-color:var(--purple);border-top-color:var(--purple);box-shadow:var(--shadow)}
+.offer .flag{position:absolute;top:-14px;right:16px;background:var(--purple);color:var(--purple-ink);font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:2px}
+.offer h3{font-size:1.45rem}
+.offer .for{font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.offer p{font-size:.9rem;color:var(--ink-2);line-height:1.55}
+.offer ul{margin:0;padding-left:18px;font-size:.88rem;color:var(--ink-2);line-height:1.6}
+.offer-note{margin-top:22px;padding:14px 18px;border-left:4px solid var(--purple);background:var(--purple-soft);font-size:.95rem;color:var(--ink);border-radius:0 var(--radius) var(--radius) 0}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:st}
+@media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step{padding:20px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--rule)}
+.step .num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;font-size:.9rem;margin-bottom:10px}
+.step h3{margin-bottom:6px}
+.step p{font-size:.9rem;color:var(--ink-2);line-height:1.55}
+.band-purple{background:var(--purple);color:var(--purple-ink);border:0}
+.band-purple .eyebrow{color:#FFB27A}
+.band-purple h2,.band-purple h3{color:var(--purple-ink)}
+.band-purple .lede,.band-purple .fw-step p{color:color-mix(in srgb, var(--purple-ink) 84%, transparent)}
+.band-purple .fw-step{background:color-mix(in srgb, #fff 7%, transparent);border-color:color-mix(in srgb, #fff 18%, transparent)}
+.band-purple .fw-step .n{color:#FFB27A}
+.band-purple .span-rule::before,.band-purple .span-rule::after{background:var(--burnt)}
+.band-purple .span-rule i{background:color-mix(in srgb, #fff 25%, transparent)}
+.cta-band{background:var(--orange-band);color:#FFF8F1;border:0}
+.cta-band .eyebrow{color:#FFE6D3}
+.cta-band h2{color:#FFF8F1}
+.cta-band .lede{color:#FFF1E6}
+.cta-band .span-rule::before,.cta-band .span-rule::after{background:#FFF8F1}
+.cta-band .span-rule i{background:color-mix(in srgb, #fff 45%, transparent)}
+.cta-band .btn-primary{background:var(--plum);border-color:var(--plum);color:#FBF5FF}
+.cta-band .btn-primary:hover{background:var(--plum-2)}
+.cta-band .btn-ghost{color:#FFF8F1;border-color:color-mix(in srgb, #fff 65%, transparent)}
+.cta-band .btn-ghost:hover{background:color-mix(in srgb, #fff 14%, transparent);border-color:#fff}
+.btn-purple{background:var(--plum);color:#FBF5FF;border-color:var(--plum)}
+.btn-purple:hover{background:var(--plum-2)}
+.topbar{border-bottom:3px solid var(--burnt)}
+.brandmark{font-family:"Mulish",sans-serif;font-size:.95rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;display:inline-flex;align-items:center;gap:9px}
+.brandmark::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--burnt);box-shadow:4px 4px 0 var(--plum);flex:none}
+.brandmark span{color:var(--ink)}
+.bm-short{display:none}
+@media (max-width:860px){.bm-full{display:none}.bm-short{display:inline}}
+/* phones: the nav links need the room; the name is in the hero right below */
+@media (max-width:430px){.brandmark{display:none}}
+.tl li.now::before{background:var(--purple);border-color:var(--purple)}
+
 [hidden]{display:none !important}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--accent-ink);padding:10px 16px;z-index:100;font-weight:700;font-size:.85rem}
@@ -517,9 +586,10 @@ footer{padding:44px 0 56px}
 
 <header class="topbar">
   <div class="topbar-in">
-    <a class="brandmark" href="#/" data-nav>Sippy<span>.</span></a>
+    <a class="brandmark" href="#/" data-nav aria-label="Sippy Chanthaphaychith, home"><span class="bm-full">Sippy Chanthaphaychith</span><span class="bm-short">Sippy</span></a>
     <nav class="navlinks" aria-label="Primary">
       <a href="#/" data-nav data-view="home">Home</a>
+      <a href="#services" data-jump>Services</a>
       <a href="#/work" data-nav data-view="work">Library</a>
       <a href="#guestbook" data-jump>Guestbook</a>
       <a href="#/privacy" data-nav data-view="privacy">Privacy</a>
@@ -537,15 +607,16 @@ footer{padding:44px 0 56px}
     <div class="hero">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow hero-eyebrow">ChantSolutions LLC</p>
-          <h1>Siprachanh<br>Chanthaphaychith</h1>
+          <p class="eyebrow hero-eyebrow">AI adoption consulting</p>
+          <h1>Your team has AI. <em>I help them actually use it.</em></h1>
+          <p class="hero-name">Siprachanh &ldquo;Sippy&rdquo; Chanthaphaychith, Founder</p>
           <div class="roleline">
-            <b>Conflict resolution</b><b>Agile coach</b><b>Bridge builder</b>
+            <b>AI adoption</b><b>Change leadership</b><b>Conflict resolution</b>
           </div>
-          <p class="lede">Because English is my second language, I&rsquo;ve spent my whole life bridging the communication gap &mdash; translating for patients in hospital rooms, training law students to deliver an oral argument, coaching teams through agile transformations that actually stuck. ChantSolutions is where that work lives now: Agile coaching, team facilitation, and communication and conflict&#8209;resolution training for organizations and the people inside them &mdash; plus the apps, books, and templates that put the same method within reach of anyone who can&rsquo;t hire a consultant.</p>
+          <p class="lede">AI adoption isn&rsquo;t a technology problem. It&rsquo;s a people problem. I led the integration of the first fine&#8209;tuned large language model onto the International Space Station operating system and am trained in conflict resolution. I help small and mid&#8209;sized businesses find what&rsquo;s really stalling adoption; then I build momentum through small, practical wins.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#/work" data-nav>See the work</a>
-            <a class="btn btn-ghost" href="#guestbook" data-jump>Leave a note</a>
+            <a class="btn btn-primary" href="#contact" data-jump>Book a 30-minute AI adoption call</a>
+            <a class="btn btn-ghost" href="#services" data-jump>See how I work</a>
           </div>
         </div>
         <img class="portrait" id="portrait" alt="Portrait of Siprachanh Chanthaphaychith" src="PORTRAIT_SRC" width="501" height="501">
@@ -554,13 +625,63 @@ footer{padding:44px 0 56px}
   </div>
 
   <div class="wrap">
-    <dl class="facts">
-      <div class="fact"><dt>Project execution</dt><dd><b>15+</b>years</dd></div>
-      <div class="fact"><dt>Research &amp; analysis</dt><dd><b>13+</b>years</dd></div>
-      <div class="fact"><dt>Integration strategy</dt><dd><b>8+</b>years</dd></div>
-      <div class="fact"><dt>Based in</dt><dd>Murfreesboro,<br>Tennessee</dd></div>
-    </dl>
+    <div class="proof" role="list" aria-label="Track record">
+      <div role="listitem"><b>First</b><span>fine-tuned LLM integrated onto the International Space Station operating system</span></div>
+      <div role="listitem"><b>75+</b><span>people led through quarterly AI program planning</span></div>
+      <div role="listitem"><b>Multimillion</b><span>dollar AI R&amp;D portfolio supported with Agile delivery</span></div>
+      <div role="listitem"><b>8 months</b><span>to deliver a three-year federal cybersecurity effort, scaling the program and securing additional funding</span></div>
+    </div>
   </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Work with me</p>
+        <h2>Diagnose before prescribing</h2>
+        <div class="span-rule" role="presentation"><i></i></div>
+      </div>
+      <p class="lede mb-28">You bought the tools. Your team still isn&rsquo;t using them. Before anyone recommends another tool, we find out why.</p>
+      <div class="offers">
+        <article class="offer">
+          <p class="for">Quick read</p>
+          <h3>Leadership Snapshot</h3>
+          <p>A 90-minute structured session with you, plus a one-page report on where adoption is stuck. Can focus on one department.</p>
+        </article>
+        <article class="offer featured">
+          <span class="flag">Most chosen</span>
+          <p class="for">Teams of 5&ndash;50</p>
+          <h3>AI Readiness &amp; Resistance Check</h3>
+          <p>Confidential conversations with your team across the six human barriers to AI adoption, a full report, and a debrief.</p>
+          <ul>
+            <li>One key insight</li>
+            <li>One low-risk experiment</li>
+            <li>One clear next step</li>
+          </ul>
+        </article>
+        <article class="offer">
+          <p class="for">Ready to move</p>
+          <h3>Check + 30-Day Pilot</h3>
+          <p>Everything in the Check, plus one pilot run with your team, weekly check-ins, and a results review.</p>
+        </article>
+      </div>
+      <p class="offer-note"><strong>Engagements start at $1,500.</strong> If you don&rsquo;t find the assessment valuable, I&rsquo;ll refund it in full.</p>
+    </div>
+  </section>
+
+  <section id="process" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Small moves, not big overhauls</h2>
+        <div class="span-rule" role="presentation"><i></i></div>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="num">1</span><h3>Listen</h3><p>I talk with you and your team to find what&rsquo;s really stalling adoption. Resistance is information, not an obstacle.</p></div>
+        <div class="step"><span class="num">2</span><h3>Run one experiment</h3><p>We pick the highest-leverage, lowest-friction workflow and test one small, reversible change.</p></div>
+        <div class="step"><span class="num">3</span><h3>Make it stick</h3><p>We measure what changed, reinforce what worked, and decide the next step together.</p></div>
+      </div>
+    </div>
+  </section>
 
   <section id="about">
     <div class="wrap">
@@ -587,7 +708,7 @@ footer{padding:44px 0 56px}
             <li class="now">
               <span class="when">Now</span>
               <span class="role">Founder</span>
-              <span class="org">ChantSolutions &mdash; digital products, Agile coaching, team facilitation</span>
+              <span class="org">ChantSolutions &mdash; AI adoption consulting, Agile coaching, team facilitation</span>
             </li>
             <li>
               <span class="when">Through Apr 2026</span>
@@ -633,7 +754,7 @@ footer{padding:44px 0 56px}
     </div>
   </section>
 
-  <section id="framework" class="band">
+  <section id="framework" class="band band-purple">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">The method everything runs on</p>
@@ -664,20 +785,20 @@ footer{padding:44px 0 56px}
   <section id="work">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">Shipped &middot; In progress &middot; Queued</p>
-        <h2>What I&rsquo;ve built, what I&rsquo;m building</h2>
+        <p class="eyebrow">Apps &middot; Books &middot; Tools</p>
+        <h2>What I&rsquo;ve built</h2>
         <div class="span-rule" role="presentation"><i></i></div>
       </div>
-      <p class="lede mb-28">This board is honest, not promotional. The third column is a decision queue, not a roadmap &mdash; those are candidates I&rsquo;m still arguing with myself about.</p>
+      <p class="lede mb-28">I build my own technology. These products put the same communication method within reach of people who can&rsquo;t hire a consultant.</p>
 
       <div class="board">
         <div>
           <div class="col-head"><span class="dot shipped"></span><h3>Built</h3><span class="count">6</span></div>
           <div class="cards">
             <article class="card">
-              <h4><a class="cardlink" href="https://getsipra.app" target="_blank" rel="noopener noreferrer">Sipra &mdash; communication training app</a></h4>
-              <p>Daily drills for speaking under pressure, structured on State&ndash;Story&ndash;Strategy. Native Flutter for iOS and Android on a Firebase backend, with a Cloud Function generating the drill content. A separate React prototype carries tester feedback.</p>
-              <div class="tags"><span class="tag">App</span><span class="tag">Flutter</span><span class="tag">getsipra.app</span></div>
+              <h4><a class="cardlink" href="https://getsipra.app" target="_blank" rel="noopener noreferrer">Sipra &ndash; Talk Smart</a></h4>
+              <p>Daily drills for speaking under pressure, structured on State&ndash;Story&ndash;Strategy. Live in the Apple App Store.</p>
+              <div class="tags"><span class="tag">App</span><span class="tag">Live</span><span class="tag">getsipra.app</span></div>
             </article>
             <article class="card">
               <h4><a class="cardlink" href="https://kinload.netlify.app" target="_blank" rel="noopener noreferrer">Kinload - Family Care</a></h4>
@@ -728,23 +849,6 @@ footer{padding:44px 0 56px}
           </div>
         </div>
 
-        <div>
-          <div class="col-head"><span class="dot next"></span><h3>Deciding next</h3><span class="count">3</span></div>
-          <div class="cards">
-            <article class="card is-next">
-              <h4>Prove the State stage</h4>
-              <p class="why">The honest gap, and it now sits first. Story and Strategy have evidence behind them; State claims somatic mechanics I haven&rsquo;t yet demonstrated on the page. Leading with it raises the bar on proving it.</p>
-            </article>
-            <article class="card is-next">
-              <h4>Ship the book</h4>
-              <p class="why">The manuscript is done and sitting still. What&rsquo;s missing is a landing page and an email sequence &mdash; not more writing.</p>
-            </article>
-            <article class="card is-next">
-              <h4>AI&#8209;Assisted Conflict Resolution for Leaders</h4>
-              <p class="why">The pivot candidate: fold the mediation expertise into the AI&#8209;for&#8209;professionals positioning instead of running them as two businesses.</p>
-            </article>
-          </div>
-        </div>
       </div>
     </div>
   </section>

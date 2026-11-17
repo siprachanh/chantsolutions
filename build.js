@@ -55,17 +55,17 @@ const page = src.replace("PORTRAIT_SRC", portrait);
  * Nothing is thrown away. Add the server whenever the guestbook earns its
  * keep, and the full build is still here.
  */
-const CONTACT = `<section class="gb" id="contact">
+const CONTACT = `<section class="gb cta-band" id="contact">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Get in touch</p>
-      <h2>One conversation</h2>
+      <h2>Is your team paying for AI it doesn&rsquo;t use?</h2>
       <div class="span-rule" role="presentation"><i></i></div>
     </div>
-    <p class="lede mb-28">If something here is close to what you need &mdash; a team that isn&rsquo;t landing, a business trying to use AI without understanding it, a conversation you&rsquo;re dreading &mdash; write to me. I read everything myself.</p>
+    <p class="lede mb-28">Book a 30-minute call. We&rsquo;ll talk about what&rsquo;s working with AI in your business, what isn&rsquo;t, and whether a Readiness Check is the right first step. No pitch deck. I read every message myself.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:support@chantsolutions.com">Email me</a>
-      <a class="btn btn-ghost" href="https://siprachant.gumroad.com/l/ibckmi" target="_blank" rel="noopener noreferrer">Get The Patient Paddle</a>
+      <a class="btn btn-primary" href="mailto:support@chantsolutions.com">Email me to book a call</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/siprachanhchanthaphaychith/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
     </div>
   </div>
 </section>`;
@@ -152,13 +152,13 @@ const doc = `<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="ChantSolutions LLC — Agile coaching, team facilitation, and workplace communication training for organizations, plus digital training products and mobile apps. Founded by Siprachanh &quot;Sippy&quot; Chanthaphaychith.">
+<meta name="description" content="AI adoption consulting for small and mid-sized businesses in Murfreesboro, Nashville, and beyond. ChantSolutions helps teams actually use the AI tools they already pay for. Founded by Siprachanh &quot;Sippy&quot; Chanthaphaychith.">
 <meta name="color-scheme" content="light dark">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ChantSolutions LLC">
-<meta property="og:title" content="Siprachanh &quot;Sippy&quot; Chanthaphaychith — ChantSolutions LLC">
-<meta property="og:description" content="Management consulting firm providing Agile coaching, team facilitation, and workplace communication training to organizations, and publishing digital training products and mobile applications.">
+<meta property="og:title" content="Your team has AI. I help them actually use it. — ChantSolutions">
+<meta property="og:description" content="AI adoption consulting, Agile coaching, and team facilitation for small and mid-sized businesses. Founded by Siprachanh &quot;Sippy&quot; Chanthaphaychith.">
 <meta property="og:url" content="https://chantsolutions.com/">
 <meta name="twitter:card" content="summary">
 ${page}

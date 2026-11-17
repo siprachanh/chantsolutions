@@ -150,10 +150,10 @@ async function settle(page) {
     const html = await page.content();
     ok("no personal email address anywhere on the page",
        !/@gmail\.com|@googlemail\.com/i.test(html));
-    const buy = await page.$('#contact a[href*="gumroad.com"]');
-    ok("a link to The Patient Paddle", buy !== null);
+    const li = await page.$('#contact a[href*="linkedin.com"]');
+    ok("a link to LinkedIn", li !== null);
     ok("that link is safe to open in a new tab",
-       (await buy.getAttribute("rel") || "").includes("noopener"));
+       (await li.getAttribute("rel") || "").includes("noopener"));
     await page.close();
   }
 

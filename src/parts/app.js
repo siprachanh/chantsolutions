@@ -39,7 +39,7 @@
     work: document.getElementById("guestbook-work")
   };
   var TITLES = {
-    home: "Sippy Chanthaphaychith",
+    home: "Sippy Chanthaphaychith · AI adoption consulting · ChantSolutions",
     work: "Library — Sippy Chanthaphaychith",
     privacy: "Privacy — Sippy Chanthaphaychith"
   };
